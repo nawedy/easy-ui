@@ -4,15 +4,15 @@ function IntroductionPage() {
   return (
     <div className="flex flex-wrap justify-center gap-4 pb-10 ml-0 lg:ml-10">
       <div className="w-full p-4 space-y-4 mt-5">
-      <h2 className="text-2xl font-bold ">Introduction</h2>
-        <p className="text-lg">
-          Template built for documentations
+      <h2 className="text-2xl font-bold">Introduction</h2>
+        <p className="text-lg text-balance text-lg text-muted-foreground">
+          Beautiful collection of 50+ building blocks and website templates.
         </p>
-        <p>
-          Easy UI is a <b>collection of re-usable 50+ templates</b> that you can use into your web apps.
+        <p className="leading-7 tracking-tight font-[500]">
+          Easy UI is a <b>collection of re-usable 50+ templates</b> and <b>building blocks</b> that you can use into your web apps.
         </p>
-        <p>It helps you:</p>
-        <ul className="list-disc pl-5 space-y-2">
+        <p className="leading-7 tracking-tight font-[500]">It helps you:</p>
+        <ul className="list-disc pl-5 space-y-2 leading-7 tracking-tight font-[500]">
           <li>✅ Save 100+ hours of work</li>
           <li>✅ No need to learn advanced animations</li>
           <li>✅ Easy to configure and change</li>
