@@ -154,6 +154,7 @@ export default function IndexPage() {
         <FaqPage />
       </div>
       <CTASection />
+      {/* <SiteFooter className="border-t" /> */}
      
     </section>
   )

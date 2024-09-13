@@ -76,7 +76,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <SiteHeader />
             {children}
-            <SiteFooter className="border-t" />
+            <SiteFooter />
             <TailwindIndicator />
             <Script
             src="https://cloud.umami.is/script.js"
