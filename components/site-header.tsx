@@ -280,13 +280,13 @@ export function SiteHeader() {
               onClick={() =>
                 window.open("https://x.com/kathanmehtaa", "_blank")
               }
-              className="flex items-start justify-start !px-0 !h-4"
+              className="flex items-start justify-start !px-0 !h-4 border-b pb-20"
             >
               <Icons.twitter className="mr-2 h-4 w-4" />
               Twitter
             </Button>
-            <div className="flex items-end justify-end !px-0 !h-12 ">
-            <ThemeToggle />
+            <div className="flex justify-center mt-10 rounded-lg border-gray-200 dark:border-gray-700 pb-4">
+              <ThemeToggle />
             </div>
           {/* </div> */}
           </nav>
