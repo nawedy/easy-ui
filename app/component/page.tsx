@@ -28,7 +28,7 @@ const components: Item[] = [
 ]
 
 export default function TemplatePage() {
-  const [selectedItem, setSelectedItem] = useState('introduction')
+  const [selectedItem, setSelectedItem] = useState('create-new')
   const [isLargeScreen, setIsLargeScreen] = useState(true)
 
   useEffect(() => {
