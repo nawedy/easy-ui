@@ -19,15 +19,7 @@ export function SiteHeader() {
         <MainNav />
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
-            <div className="sm:block hidden lg:block">
-             
-
-              {/* <AnimatedSubscribeButton
-              // buttonColor="#000000"
-              buttonTextColor="#ffffff"
-              subscribeStatus={false}
-              initialText={ */}
-              
+            <div className="sm:block hidden lg:block">              
               <Button
                 variant="ghost"
                 size="icon"

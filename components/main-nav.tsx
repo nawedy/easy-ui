@@ -8,10 +8,11 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { Badge } from "./ui/badge"
-// import { Badge } from "@/registry/new-york/ui/badge"
 
 export function MainNav() {
   const pathname = usePathname()
+
+  const isActive = (path: string) => pathname === path || pathname.startsWith(path)
 
   return (
     <div className="mr-4 md:flex">
@@ -26,8 +27,8 @@ export function MainNav() {
         <Link
           href="/templates"
           className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname === "/docs" ? "text-foreground" : "text-foreground/60"
+            isActive("/templates") ? "text-foreground" : "text-foreground/60",
+            "transition-colors hover:text-foreground/80"
           )}
         >
           Templates
@@ -35,21 +36,18 @@ export function MainNav() {
         <Link
           href="/component"
           className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname === "/docs" ? "text-foreground" : "text-foreground/60"
+            isActive("/component") ? "text-foreground" : "text-foreground/60",
+            "transition-colors hover:text-foreground/80"
           )}
         >
           Components
         </Link>
         
-       
         <Link
           href={siteConfig.links.github}
           className={cn(
-            "transition-colors hover:text-foreground/80 flex items-center",
-            pathname?.startsWith("/blocks")
-              ? "text-foreground"
-              : "text-foreground/60"
+            isActive(siteConfig.links.github) ? "text-foreground" : "text-foreground/60",
+            "transition-colors hover:text-foreground/80 flex items-center"
           )}
         >
           GitHub <Icons.externalLink className="ml-2 size-4" />
@@ -57,21 +55,17 @@ export function MainNav() {
         <Link
           href="https://premium.easyui.pro/"
           className={cn(
-            "transition-colors hover:text-foreground/80 flex items-center",
-            pathname?.startsWith("/blocks")
-              ? "text-foreground"
-              : "text-foreground/60"
+            isActive("https://premium.easyui.pro/") ? "text-foreground" : "text-foreground/60",
+            "transition-colors hover:text-foreground/80 flex items-center"
           )}
         >
-          Premium Templates<Icons.externalLink className="ml-2 size-4" />
+          Premium Templates <Icons.externalLink className="ml-2 size-4" />
         </Link>
         <Link
           href="https://mvp.easyui.pro/"
           className={cn(
-            "transition-colors hover:text-foreground/80 flex items-center",
-            pathname?.startsWith("/blocks")
-              ? "text-foreground"
-              : "text-foreground/60"
+            isActive("https://mvp.easyui.pro/") ? "text-foreground" : "text-foreground/60",
+            "transition-colors hover:text-foreground/80 flex items-center"
           )}
         >
           Easy MVP <Icons.externalLink className="ml-2 size-4" />
