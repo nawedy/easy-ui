@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react'
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon } from 'lucide-react'
+import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, LucideGitBranchPlus } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button"
 import EzBlog from '../(docs)/ez-blog/page'
 import IntroductionPage from '../(docs)/introduction/page'
 import CreateNewComponentt from '../(docs)/create-new-component/page'
+import LaunchpadComponent from '../(docs)/launchpad-component/page'
 
 interface Item {
   name: string;
@@ -25,6 +26,7 @@ interface Item {
 const components: Item[] = [
   { name: 'introduction' },
   { name: 'create-new', isNew: true },
+  { name: 'launchpad', isNew: true},
 ]
 
 export default function TemplatePage() {
@@ -52,6 +54,8 @@ export default function TemplatePage() {
         return <IntroductionPage />
       case 'create-new':
         return <CreateNewComponentt />
+      case 'launchpad':
+        return <LaunchpadComponent />
     //   case 'ez-chatbot':
     //     return <EzChatbot />
     //   case 'ez-dashboard':
@@ -106,6 +110,7 @@ export default function TemplatePage() {
   const getIcon = (name: string) => {
     switch (name) {
       case 'create-new': return <FileText className="mr-2 h-4 w-4" />
+      case 'launchpad': return <LucideGitBranchPlus className="mr-2 h-4 w-4" />
       default: return <ChevronRight className="mr-2 h-4 w-4" />
     }
   }
