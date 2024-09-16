@@ -6,36 +6,36 @@ const reviews = [
     name: "Marcello Fonseca",
     username: "@Marcello Fonseca",
     body: "Very Nice!! 🔥🤯",
-    img: "https://avatar.vercel.sh/rauchg.svg?text=MF",
-    link: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7211502593452216320?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7211502593452216320%2C7211504229494984705%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287211504229494984705%2Curn%3Ali%3AugcPost%3A7211502593452216320%29"
+    img: "https://media.licdn.com/dms/image/v2/D4E03AQFs2UszxjYiLQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1722223533843?e=1732147200&v=beta&t=EhjU82qlg6aYz0IcPFV53T_hdRP3vzaKJUy-_FVZwqo",
+    link: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7211502593452216320?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7211502593452216320%2C7211504229494984705%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287211504229494984705%2Curn%3Ali%3AugcPost%3A7211502593452216320%29",
   },
   {
     name: "Sayed Suliman",
     username: "@Sayed Suliman",
     body: "Can't wait! 🤯",
-    img: "https://media.licdn.com/dms/image/D5603AQGnQm6vP_Jpfg/profile-displayphoto-shrink_400_400/0/1719313252960?e=1726099200&v=beta&t=ofZJFHCjptFjbV36l2H0uwHK3Koi50997F-B060kYgI",
-    link: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7211502593452216320?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7211502593452216320%2C7211524681336553473%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287211524681336553473%2Curn%3Ali%3AugcPost%3A7211502593452216320%29"
+    img: "https://media.licdn.com/dms/image/v2/D5603AQGnQm6vP_Jpfg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1719313252960?e=1732147200&v=beta&t=jA5hp5ca1-AlVB9RxfTyM9EFZkqtBtEPEDo5_6gbGDM",
+    link: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7211502593452216320?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7211502593452216320%2C7211524681336553473%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287211524681336553473%2Curn%3Ali%3AugcPost%3A7211502593452216320%29",
   },
   {
     name: "Danny Chen",
     username: "@Danny Chen",
     body: "That is smooth like butter 🔥",
     img: "https://media.licdn.com/dms/image/v2/D4D03AQGjpcwBbDxD2w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1723423682467?e=1729728000&v=beta&t=iYyx1uSH30Xrpu118my_gyhUnHAjBqwXPPx8y_N4sSU",
-    link: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7211502593452216320?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7211502593452216320%2C7211509809668366336%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287211509809668366336%2Curn%3Ali%3AugcPost%3A7211502593452216320%29"
+    link: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7211502593452216320?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7211502593452216320%2C7211509809668366336%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287211509809668366336%2Curn%3Ali%3AugcPost%3A7211502593452216320%29",
   },
   {
     name: "Dally R",
     username: "@Dally R",
-    body: "Great job! Love this. ",
-    img: "https://avatar.vercel.sh/rauchg.svg?text=DR",
-    link: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7210915776176791555?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7210915776176791555%2C7211017051711111169%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287211017051711111169%2Curn%3Ali%3AugcPost%3A7210915776176791555%29"
+    body: "Great job! Love this.",
+    img: "https://media.licdn.com/dms/image/v2/D4D35AQEl_EU_CVGi_w/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1711663894244?e=1727028000&v=beta&t=nStMuhE6nNOJwEMpLcGSZCXpCDdIgEycwvDoijDnYRU",
+    link: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7210915776176791555?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7210915776176791555%2C7211017051711111169%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287211017051711111169%2Curn%3Ali%3AugcPost%3A7210915776176791555%29",
   },
   {
     name: "Jerome Renard",
     username: "@Jerome Renard",
     body: "Looking really good!",
-    img: "https://media.licdn.com/dms/image/D5603AQFJ_EY-hgejfQ/profile-displayphoto-shrink_400_400/0/1711319351530?e=1726099200&v=beta&t=Pz_zDhAI9PWDqxJpq_7pF8VDpH6Xr3jfsd503QwrFOU",
-    link: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7210915776176791555?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7210915776176791555%2C7211032199658102784%29&replyUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7210915776176791555%2C7211032581247537153%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287211032199658102784%2Curn%3Ali%3AugcPost%3A7210915776176791555%29&dashReplyUrn=urn%3Ali%3Afsd_comment%3A%287211032581247537153%2Curn%3Ali%3AugcPost%3A7210915776176791555%29"
+    img: "https://media.licdn.com/dms/image/v2/D5603AQFJ_EY-hgejfQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1711319351530?e=1732147200&v=beta&t=qryI-WkZA4PDq0cSYpfPQTlPFqdxkLad41KOimd2mls",
+    link: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7210915776176791555?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7210915776176791555%2C7211032199658102784%29&replyUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7210915776176791555%2C7211032581247537153%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287211032199658102784%2Curn%3Ali%3AugcPost%3A7210915776176791555%29&dashReplyUrn=urn%3Ali%3Afsd_comment%3A%287211032581247537153%2Curn%3Ali%3AugcPost%3A7210915776176791555%29",
   },
 ];
 
