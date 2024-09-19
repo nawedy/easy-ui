@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react'
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, LucideGitBranchPlus } from 'lucide-react'
+import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, LucideGitBranchPlus, KeyIcon, Command } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,6 +16,14 @@ import EzBlog from '../(docs)/ez-blog/page'
 import IntroductionPage from '../(docs)/introduction/page'
 import CreateNewComponentt from '../(docs)/create-new-component/page'
 import LaunchpadComponent from '../(docs)/launchpad-component/page'
+import KeyButton from '@/components/easyui/key-button'
+import { KeyboardIcon, StarFilledIcon, StarIcon } from '@radix-ui/react-icons'
+import SparkleButton from '@/components/easyui/sparkle-button'
+import KeyButtonComponent from '../(docs)/key-button-component/page'
+import SparkleButtonComponent from '../(docs)/sparkle-button-component/page'
+import { CommandShortcut } from '@/components/ui/command'
+import SearchCommand from '@/components/easyui/search-command'
+import SearchCommandComponent from '../(docs)/search-command-component/page'
 
 interface Item {
   name: string;
@@ -27,6 +35,9 @@ const components: Item[] = [
   { name: 'introduction' },
   { name: 'create-new', isNew: true },
   { name: 'launchpad', isNew: true},
+  { name: 'key button', isNew: true},
+  { name: 'sparkle button', isNew: true},
+  { name: 'command search', isNew: true},
 ]
 
 export default function TemplatePage() {
@@ -56,52 +67,13 @@ export default function TemplatePage() {
         return <CreateNewComponentt />
       case 'launchpad':
         return <LaunchpadComponent />
-    //   case 'ez-chatbot':
-    //     return <EzChatbot />
-    //   case 'ez-dashboard':
-    //     return <EzDocs />
-    //   case 'ez-design':
-    //     return <DesignPage />
-    //   case 'ez-docs':
-    //     return <EzDocs />
-    //   case 'ez-grids':
-    //     return <GridsPage />
-    //   case 'ez-landing-docs':
-    //     return <EzLandingDocs />
-    //   case 'ez-marketplace':
-    //     return <MarketplacePage />
-    //   case 'ez-newsletter':
-    //     return <NewsletterPage />
-    //   case 'ez-nextui':
-    //     return <EzNextUII />
-    //   case 'ez-notes':
-    //     return <NotesPage />
-    //   case 'ez-portfolio':
-    //     return <EzPortfolio />
-    //   case 'ez-red':
-    //     return <EzRed />
-    //   case 'ez-shots':
-    //     return <EzShots />
-    //   case 'ez-story':
-    //     return <EasyStory />
-    //   case 'ez-tmp':
-    //     return <EzPage />
-    //   case 'ez-tmp2':
-    //     return <EzPage2 />
-    //   case 'ez-tmp3':
-    //     return <EzPage3 />
-    //   case 'ez-tmp4':
-    //     return <EzPage4 />
-    //   case 'ez-tmp5':
-    //     return <EzPage5 />
-    //   case 'ez-waitlist':
-    //     return <EzWaitlist />
-    //   case 'quotesai':
-    //     return <QuotesAI />
-    //   case 'designfast':
-    //     return <DesignfastPage />
-    //   case 'retro':
-    //     return <Retro />
+      case 'key button':
+          return <KeyButtonComponent />
+      case 'sparkle button':
+          return <SparkleButtonComponent />
+      case 'command search':
+          return <SearchCommandComponent />
+
       default:
         return <div>Component not found</div>
     }
@@ -111,6 +83,9 @@ export default function TemplatePage() {
     switch (name) {
       case 'create-new': return <FileText className="mr-2 h-4 w-4" />
       case 'launchpad': return <LucideGitBranchPlus className="mr-2 h-4 w-4" />
+      case 'key button': return <KeyboardIcon className="mr-2 h-4 w-4" />
+      case 'sparkle button': return <StarIcon className="mr-2 h-4 w-4" />
+      case 'command search': return <Command className="mr-2 h-4 w-4" />
       default: return <ChevronRight className="mr-2 h-4 w-4" />
     }
   }
