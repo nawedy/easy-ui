@@ -16,7 +16,8 @@ function Retro() {
         <CardDescription className="text-balance text-lg text-muted-foreground">
           Retro themed template
         </CardDescription>
-        <Badge className="hidden sm:inline-block bg-green-500">
+        <Badge className="hidden sm:inline-block" variant="default">
+        
           Our Top Choice for Light Mode Templates.{" "}
         </Badge>
       </div>

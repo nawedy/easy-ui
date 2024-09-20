@@ -16,11 +16,11 @@ function EasyStory() {
         <CardDescription className="text-balance text-lg text-muted-foreground">
           Easy Template for Telling a Small Story
         </CardDescription>
-        <Badge className="hidden sm:inline-block" variant="default">
+        {/* <Badge className="hidden sm:inline-block" variant="default">
           <a href="https://magicui.design">
             Inspired by Magic UI with ❤️
           </a>
-        </Badge>
+        </Badge> */}
       </div>
       
       <div className="lg:min-w-[900px] px-1 lg:px-2 sm:w-1/2 p-1 lg:p-2 ">
