@@ -345,13 +345,13 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   const headings = extractHeadings(post.body.raw)
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-950 w-full">
+    <div className="min-h-screen bg-white dark:bg-gray-950 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row">
           <main className="w-full md:flex-1">
-            <article className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg">
-              <div className="px-6 py-8 sm:px-8 sm:py-8">
-                <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between mb-8">
+            <article className="bg-white dark:bg-black rounded-2xl overflow-hidden ">
+              <div className="px-6 py-0 sm:px-8 sm:py-0">
+                {/* <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between mb-8">
                   <div className="flex items-center space-x-4">
                     <Avatar className="w-12 h-12 sm:w-14 sm:h-14">
                       <AvatarImage src="/avatar.png" alt="Author" />
@@ -374,8 +374,8 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                       <span>{estimateReadingTime(post.body.raw)} min read</span>
                     </div>
                   </div>
-                </div>
-                <h1 className="text-4xl font-bold mb-6 py-5 dark:text-white" style={{ letterSpacing: '-0.05em' }}>{post.title}</h1>
+                </div> */}
+                <h1 className="text-5xl font-bold mb-6 py-0 dark:text-white tracking-tight lg:text-6xl md:text-4xl" style={{ letterSpacing: '-0.05em' }}>{post.title}</h1>
                 <div className="flex flex-wrap gap-2 mb-8">
                   {post.tags && post.tags.map((tag) => (
                     <Badge key={tag} variant="secondary" className='dark:bg-gray-200 text-black'>{tag}</Badge>
