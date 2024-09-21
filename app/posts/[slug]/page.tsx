@@ -345,15 +345,15 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   const headings = extractHeadings(post.body.raw)
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col lg:flex-row ">
-          <main className="lg:w-2/3">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-950 w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-12">
+        <div className="flex flex-col md:flex-row">
+          <main className="w-full md:flex-1">
             <article className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg">
               <div className="px-6 py-8 sm:px-8 sm:py-8">
                 <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between mb-8">
                   <div className="flex items-center space-x-4">
-                    <Avatar className="w-12 h-12 sm:w-14 sm:h-14 ">
+                    <Avatar className="w-12 h-12 sm:w-14 sm:h-14">
                       <AvatarImage src="/avatar.png" alt="Author" />
                       <AvatarFallback className='dark:bg-gray-300 dark:text-black'>KM</AvatarFallback>
                     </Avatar>
@@ -382,11 +382,9 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                   ))}
                 </div>
                 <Separator className="my-8" />
-                {/* <div className="prose prose-lg max-w-none dark:prose-invert"> */}
-                  <PostBody>
+                <PostBody>
                   <Content components={components} />
-                  </PostBody>
-                {/* </div> */}
+                </PostBody>
                 <Separator className="my-8" />
                 <div className="flex justify-between items-center">
                   <ShareButtons title={post.title} url={shareUrl} />
@@ -397,30 +395,28 @@ export default function PostPage({ params }: { params: { slug: string } }) {
               </div>
             </article>
           </main>
-          <aside className="lg:w-1/3 mt-8 lg:mt-0 lg:pl-8">
-      <div className="space-y-8 sticky top-8">
-        <Card className="bg-white dark:bg-gray-800 shadow-lg overflow-hidden ">
-          <CardContent className="p-6">
-            <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">Table of Contents</h2>
-            <TableOfContents headings={headings} />
-          </CardContent>
-        </Card>
-        <Card className="bg-gradient-to-br from-purple-600 to-indigo-600 text-white shadow-lg overflow-hidden">
-          <CardContent className="p-6 flex flex-col items-center text-center">
-            <h3 className="text-xl font-bold mb-4 tracking-tight">Want to save time? Get beautifully designed website templates with Easy UI Premium.</h3>
-            <p className="text-md mb-6 opacity-90 font-normal tracking-tight">30+ beautiful sections and templates built with React, Typescript, Tailwind CSS, and Framer Motion.</p>
-            <a href="https://premium.easyui.pro/pricing-section" target="_blank" rel="noopener noreferrer" className="inline-block group">
-              <Button className="bg-white text-purple-600 hover:bg-purple-100 transition-colors duration-200 font-bold py-2 px-6 rounded-full shadow-md hover:shadow-lg tracking-tight">
-                Get Started <ChevronRight className="inline ml-2 transition-transform duration-200 group-hover:translate-x-1" />
-              </Button>
-            </a>
-            {/* </Button> */}
-          </CardContent>
-        </Card>
-      </div>
-    </aside>
+          <aside className="w-full md:w-1/4 mt-8 md:mt-0 md:pl-8">
+            <div className="space-y-8 sticky top-8">
+              {/* <Card className="bg-white dark:bg-gray-800 shadow-lg overflow-hidden">
+                <CardContent className="p-6">
+                  <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">Table of Contents</h2>
+                  <TableOfContents headings={headings} />
+                </CardContent>
+              </Card> */}
+              <Card className="bg-gradient-to-br from-purple-600 to-indigo-600 text-white shadow-lg overflow-hidden">
+                <CardContent className="p-6 flex flex-col items-center text-center">
+                  <h3 className="text-xl font-bold mb-4 tracking-tight">Want to save time? Get beautifully designed website templates with Easy UI Premium.</h3>
+                  <p className="text-md mb-6 opacity-90 font-normal tracking-tight">30+ beautiful sections and templates built with React, Typescript, Tailwind CSS, and Framer Motion.</p>
+                  <a href="https://premium.easyui.pro/pricing-section" target="_blank" rel="noopener noreferrer" className="inline-block group">
+                    <Button className="bg-white text-purple-600 hover:bg-purple-100 transition-colors duration-200 font-bold py-2 px-6 rounded-full shadow-md hover:shadow-lg tracking-tight">
+                      Get Started <ChevronRight className="inline ml-2 transition-transform duration-200 group-hover:translate-x-1" />
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+          </aside>
         </div>
       </div>
-    </div>
-  )
+    </div>  )
 }
