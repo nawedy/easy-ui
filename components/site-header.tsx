@@ -216,8 +216,8 @@ export function SiteHeader() {
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out lg:hidden`}
       >
-        <div className="flex flex-col h-full p-4 py-6 ">
-          <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col h-full p-0 py-6">
+          <div className="flex items-center justify-between mb-0 m-2">
             <Link href="/" className="mr-6 flex items-center space-x-2">
               <img
                 src="https://pub-0cd6f9d4131f4f79ac40219248ae64db.r2.dev/logo.svg"
@@ -235,7 +235,7 @@ export function SiteHeader() {
               <X className="h-6 w-6" />
             </button>
           </div>
-          <nav className="flex flex-col space-y-4  bg-white text-black dark:bg-black dark:text-white ml-2">
+          <nav className="flex flex-col space-y-4  bg-white text-black dark:bg-black dark:text-white ml-0 py-10 pl-4">
             <Link href="/" className="text-foreground hover:text-foreground/80 text-sm">
               Home
             </Link>
