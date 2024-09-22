@@ -244,8 +244,6 @@
 
 
 
-
-
 import { format, parseISO } from 'date-fns'
 import { allPosts } from 'contentlayer/generated'
 import { getMDXComponent } from 'next-contentlayer/hooks'
@@ -333,6 +331,12 @@ const TableOfContents = ({ headings }: { headings: { id: string; text: string; l
   </nav>
 );
 
+// Logic to find the next post based on the current post's index
+const findNextPost = (currentSlug) => {
+  const currentIndex = allPosts.findIndex(post => post._raw.flattenedPath === currentSlug);
+  return allPosts[currentIndex + 1] || null;
+};
+
 export default function PostPage({ params }: { params: { slug: string } }) {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
   
@@ -343,6 +347,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   const Content = getMDXComponent(post.body.code)
   const shareUrl = `https://easyui.pro/posts/${post._raw.flattenedPath}`
   const headings = extractHeadings(post.body.raw)
+  const nextPost = findNextPost(params.slug);
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 w-full">
@@ -351,30 +356,6 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           <main className="w-full md:flex-1">
             <article className="bg-white dark:bg-black rounded-2xl overflow-hidden ">
               <div className="px-6 py-0 sm:px-8 sm:py-0">
-                {/* <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between mb-8">
-                  <div className="flex items-center space-x-4">
-                    <Avatar className="w-12 h-12 sm:w-14 sm:h-14">
-                      <AvatarImage src="/avatar.png" alt="Author" />
-                      <AvatarFallback className='dark:bg-gray-300 dark:text-black'>KM</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <p className="text-lg font-semibold dark:text-white">Kathan Mehta</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Author</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 text-sm text-gray-500 dark:text-gray-400">
-                    <div className="flex items-center mb-2 sm:mb-0">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      <time dateTime={post.date}>
-                        {format(parseISO(post.date), 'LLLL d, yyyy')}
-                      </time>
-                    </div>
-                    <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-2" />
-                      <span>{estimateReadingTime(post.body.raw)} min read</span>
-                    </div>
-                  </div>
-                </div> */}
                 <h1 className="text-5xl font-bold mb-6 py-0 dark:text-white tracking-tight lg:text-6xl md:text-4xl" style={{ letterSpacing: '-0.05em' }}>{post.title}</h1>
                 <div className="flex flex-wrap gap-2 mb-8">
                   {post.tags && post.tags.map((tag) => (
@@ -392,17 +373,40 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                     {/* Add your social media share buttons here */}
                   </div>
                 </div>
+                {nextPost && (
+                  // <div className="mt-12 bg-white dark:bg-black">
+                  //   <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4 bg-white dark:bg-black">Next Article</h2>
+                  //   <a href={`/posts/${nextPost._raw.flattenedPath}`} className="group">
+                  //     <div className="flex items-center justify-between p-4 bg-white dark:bg-black border rounded-lg  transition-shadow duration-300">
+                  //       <span className="font-semibold group-hover:text-gray-600 dark:group-hover:text-purple-400">{nextPost.title}</span>
+                  //       <ChevronRight className="transition-transform duration-200 group-hover:translate-x-1" />
+                  //     </div>
+                      
+                  //   </a>
+                  // </div>
+                  <a className="mt-12 bg-white dark:bg-black" href={`/posts/${nextPost._raw.flattenedPath}`}>
+                    <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4 bg-white dark:bg-black py-2 mt-5">Next Article</h2>
+      <div className="relative  cursor-pointer group p-4 bg-white dark:bg-black border-none rounded-lg  transition-shadow duration-300">
+        <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 animate-gradient-x" />
+        <div className="absolute inset-[2px] rounded-lg bg-white  dark:bg-black z-10 border" />
+        <div className="relative z-20 flex items-center justify-between h-full px-4 rounded-lg transition-all duration-300 ">
+          <span className="font-semibold text-gray-800 dark:text-gray-200 transition-colors duration-300">
+          {nextPost.title}
+          </span>
+          <ChevronRight className="text-gray-600 dark:text-gray-400 transition-all duration-300 group-hover:translate-x-1 group-hover:text-purple-600 dark:group-hover:text-purple-400" />
+        </div>
+      </div>
+    {/* </div> */}
+    </a>
+                )}
+
+
+
               </div>
             </article>
           </main>
           <aside className="w-full md:w-1/4 mt-8 md:mt-0 md:pl-8">
             <div className="space-y-8 sticky top-8">
-              {/* <Card className="bg-white dark:bg-gray-800 shadow-lg overflow-hidden">
-                <CardContent className="p-6">
-                  <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">Table of Contents</h2>
-                  <TableOfContents headings={headings} />
-                </CardContent>
-              </Card> */}
               <Card className="bg-gradient-to-br from-purple-600 to-indigo-600 text-white shadow-lg overflow-hidden">
                 <CardContent className="p-6 flex flex-col items-center text-center">
                   <h3 className="text-xl font-bold mb-4 tracking-tight">Want to save time? Get beautifully designed website templates with Easy UI Premium.</h3>
