@@ -843,6 +843,8 @@ import DesignfastPage from '../(docs)/designfast/page'
 import Retro from '../(docs)/retro/page'
 import NewsletterPage from '../(docs)/ez-newsletter/page'
 import EasyStory from '../(docs)/ez-story/page'
+import EzDashboard from '../(docs)/ez-dashboard/page'
+import EzDocss from '../(docs)/ez-docs/page'
 
 interface Item {
   name: string;
@@ -906,11 +908,11 @@ export default function TemplatePage() {
       case 'ez-chatbot':
         return <EzChatbot />
       case 'ez-dashboard':
-        return <EzDocs />
+        return <EzDashboard />
       case 'ez-design':
         return <DesignPage />
       case 'ez-docs':
-        return <EzDocs />
+        return <EzDocss />
       case 'ez-grids':
         return <GridsPage />
       case 'ez-landing-docs':

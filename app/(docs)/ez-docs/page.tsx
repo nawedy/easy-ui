@@ -8,7 +8,7 @@ import { Card, CardDescription, CardTitle } from "@/components/ui/card"
 import { Icons } from "@/components/icons"
 import AdBanner from "@/components/ad-banner"
 
-function EzDocs() {
+function EzDocss() {
   return (
     <div className="flex flex-wrap justify-start gap-4 pb-10 max-w-full min-w-full px-0 lg:px-20">
       <div className="w-full sm:w-1/2 p-2 mt-3 space-y-4 lg:mt-5 md:lg-5">
@@ -122,4 +122,4 @@ function EzDocs() {
   )
 }
 
-export default EzDocs
+export default EzDocss
