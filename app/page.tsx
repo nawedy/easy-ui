@@ -12,17 +12,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { Announcement } from "@/components/announcement"
 import CTASection from "@/components/cta-section"
 import { Icons } from "@/components/icons"
-import AvatarCircles from "@/components/magicui/avatar-circles"
-import { BorderBeamm } from "@/components/magicui/border-beam"
-import LinearGradient from "@/components/magicui/linear-gradient"
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header"
-import { SiteFooter } from "@/components/site-footer"
-import { SiteHeader } from "@/components/site-header"
+import AvatarCircles from "@/components/magicui/avatar-circles" 
 
 import FaqPage from "./faqs/page"
 import Features from "./features/page"
@@ -42,15 +32,15 @@ export default function IndexPage() {
   ]
   return (
     <section id="hero">
-      <div className="flex flex-col items-start gap-6 mt-20 lg:mt-10 md:mt-10 px-7 text-center md:items-center pb-0 lg:pb-14 md:pb-14 sm:pb-0">
+      <div className="flex flex-col items-start gap-6 mt-20 lg:mt-20 md:mt-10 px-7 text-center md:items-center pb-0 lg:pb-14 md:pb-14 sm:pb-0">
         <Announcement />
         <div className="relative flex flex-col gap-4 md:items-center lg:flex-row">
-          <h1 className="relative mx-0 max-w-[43.8rem] text-balance bg-gradient-to-br from-black from-50% to-neutral-200/60 bg-clip-text pt-5 text-left text-5xl font-semibold tracking-tighter text-transparent sm:text-7xl md:mx-auto md:px-4 md:py-2 md:text-center md:text-7xl lg:text-7xl dark:text-white">
+          <h1 className="relative mx-0 max-w-[54.8rem] text-balance bg-gradient-to-br from-black from-50% to-neutral-200/60 bg-clip-text pt-5 text-left text-5xl font-semibold tracking-tighter text-transparent sm:text-7xl md:mx-auto md:px-4 md:py-2 md:text-center md:text-7xl lg:text-7xl dark:bg-gradient-to-br dark:from-white dark:to-neutral-200/60 dark:bg-clip-text dark:text-transparent">
             Collection of Premium {" "} <br/>Web Templates 
           </h1>
-          <span className="text-neutral-90 absolute -top-3.5 left-0 z-10 rotate-3 whitespace-nowrap rounded-full bg-neutral-800 px-2.5 py-1 text-[12px] font-semibold uppercase leading-5 tracking-wide text-white md:top-10 md:-rotate-12">
+          {/* <span className="text-neutral-90 absolute -top-3.5 left-0 z-10 rotate-3 whitespace-nowrap rounded-full bg-neutral-800 px-2.5 py-1 text-[12px] font-semibold uppercase leading-5 tracking-wide text-white md:top-10 md:-rotate-12">
             100% High Quality
-          </span>
+          </span> */}
         </div>
         <p className="max-w-xl text-balance text-left text-base tracking-tight text-black md:text-center md:text-lg dark:font-medium dark:text-white">
           50+ <b>High Quality</b> templates built with{" "}
@@ -110,32 +100,32 @@ export default function IndexPage() {
           </span>
           <AvatarCircles numPeople={99} avatarUrls={avatarUrls} />
         </div>        
-        <motion.div 
-          className="flex flex-col justify-center items-center mx-auto mt-10 mb-10 lg:mb-0 md:mb-0"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <span className="text-lg font-semibold animate-pulse">Featured on</span>
-          <a href="https://sourceforge.net/p/easy-ui/" className="dark:hidden">
-            <motion.img 
-              alt="Download Easy UI" 
-              src="https://sourceforge.net/sflogo.php?type=17&amp;group_id=3785509" 
-              width="200"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            />
-          </a>
-          <a href="https://sourceforge.net/p/easy-ui/" className="hidden dark:block">
-            <motion.img 
-              alt="Download Easy UI" 
-              src="https://sourceforge.net/sflogo.php?type=18&amp;group_id=3785509" 
-              width="200"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            />
-          </a>
-        </motion.div>
+          <motion.div 
+            className="flex flex-col justify-center items-center mx-auto mt-10 mb-10 lg:mb-0 md:mb-0"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="text-lg font-semibold animate-pulse">Featured on</span>
+            <a href="https://sourceforge.net/p/easy-ui/" className="dark:hidden">
+              <motion.img 
+                alt="Download Easy UI" 
+                src="https://sourceforge.net/sflogo.php?type=17&amp;group_id=3785509" 
+                width="200"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              />
+            </a>
+            <a href="https://sourceforge.net/p/easy-ui/" className="hidden dark:block">
+              <motion.img 
+                alt="Download Easy UI" 
+                src="https://sourceforge.net/sflogo.php?type=18&amp;group_id=3785509" 
+                width="200"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              />
+            </a>
+          </motion.div>
         <Showcase />
         
         <MarqueeDemo />
