@@ -20,6 +20,7 @@ import OrbitingCirclesDemo from "./integrations/page"
 import PricingPage from "./pricing/page"
 import MarqueeDemo from "./testimonials/page"
 import Showcase from "@/components/showcase"
+import EasyHero from "@/components/easy-hero"
 
 // Corrected the path for FAQPage import
 
@@ -32,17 +33,17 @@ export default function IndexPage() {
   ]
   return (
     <section id="hero">
-      <div className="flex flex-col items-start gap-6 mt-20 lg:mt-20 md:mt-10 px-7 text-center md:items-center pb-0 lg:pb-14 md:pb-14 sm:pb-0">
+      <div className="flex flex-col items-start gap-0 mt-20 lg:mt-20 md:mt-10 px-7 text-center md:items-center mx-auto pb-0 lg:pb-14 md:pb-14 sm:pb-0">
         <Announcement />
-        <div className="relative flex flex-col gap-4 md:items-center lg:flex-row">
+        {/* <div className="relative flex flex-col gap-4 md:items-center lg:flex-row">
           <h1 className="relative mx-0 max-w-[54.8rem] text-balance bg-gradient-to-br from-black from-50% to-neutral-200/60 bg-clip-text pt-5 text-left text-5xl font-semibold tracking-tighter text-transparent sm:text-7xl md:mx-auto md:px-4 md:py-2 md:text-center md:text-7xl lg:text-7xl dark:bg-gradient-to-br dark:from-white dark:to-neutral-200/60 dark:bg-clip-text dark:text-transparent">
             Collection of Premium {" "} <br/>Web Templates 
-          </h1>
+          </h1> */}
           {/* <span className="text-neutral-90 absolute -top-3.5 left-0 z-10 rotate-3 whitespace-nowrap rounded-full bg-neutral-800 px-2.5 py-1 text-[12px] font-semibold uppercase leading-5 tracking-wide text-white md:top-10 md:-rotate-12">
             100% High Quality
           </span> */}
-        </div>
-        <p className="max-w-xl text-balance text-left text-base tracking-tight text-black md:text-center md:text-lg dark:font-medium dark:text-white">
+        {/* </div> */}
+        {/* <p className="max-w-xl text-balance text-left text-base tracking-tight text-black md:text-center md:text-lg dark:font-medium dark:text-white">
           50+ <b>High Quality</b> templates built with{" "}
           <span className="font-bold text-black dark:text-white">Next.js, React</span>,{" "}
           <span className="font-bold text-black dark:text-white">
@@ -59,7 +60,9 @@ export default function IndexPage() {
           </span>
           .
           <br />
-        </p>
+        </p> */}
+
+      <EasyHero title="Collection of Premium Web Templates" subtext='50+ High Quality templates built with Next.js, React, Typescript, Tailwind CSS, and Framer Motion.' />
         <div className="mx-0 flex w-full max-w-full flex-col gap-4 py-1 sm:max-w-lg sm:flex-row md:mx-auto">
           <div className="flex w-full flex-col gap-2 sm:flex-row sm:gap-4">
             <Link
@@ -94,12 +97,12 @@ export default function IndexPage() {
           </div>
         </div>
 
-        <div className="flex max-w-xl flex-row items-center justify-between text-balance p-5 text-left text-base tracking-tight text-black md:text-center md:text-base dark:font-medium dark:text-white">
+        {/* <div className="flex max-w-xl flex-row items-center justify-between text-balance p-5 text-left text-base tracking-tight text-black md:text-center md:text-base dark:font-medium dark:text-white">
           <span className="mr-2 font-300 text-gray-600 dark:text-gray-400 text-md">
             Trusted by
           </span>
           <AvatarCircles numPeople={99} avatarUrls={avatarUrls} />
-        </div>        
+        </div>         */}
           <motion.div 
             className="flex flex-col justify-center items-center mx-auto mt-10 mb-10 lg:mb-0 md:mb-0"
             initial={{ opacity: 0, y: 20 }}

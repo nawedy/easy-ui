@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react'
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, LucideGitBranchPlus, KeyIcon, Command } from 'lucide-react'
+import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, LucideGitBranchPlus, KeyIcon, Command, TextCursorIcon } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,6 +24,7 @@ import SparkleButtonComponent from '../(docs)/sparkle-button-component/page'
 import { CommandShortcut } from '@/components/ui/command'
 import SearchCommand from '@/components/easyui/search-command'
 import SearchCommandComponent from '../(docs)/search-command-component/page'
+import GlitchTextComponent from '../(docs)/glitch-text-component/page'
 
 interface Item {
   name: string;
@@ -38,6 +39,7 @@ const components: Item[] = [
   { name: 'key button', isNew: true},
   { name: 'sparkle button', isNew: true},
   { name: 'command search', isNew: true},
+  { name: 'glitch text', isNew: true},
 ]
 
 export default function TemplatePage() {
@@ -73,6 +75,8 @@ export default function TemplatePage() {
           return <SparkleButtonComponent />
       case 'command search':
           return <SearchCommandComponent />
+      case 'glitch text':
+          return <GlitchTextComponent />
 
       default:
         return <div>Component not found</div>
@@ -86,6 +90,7 @@ export default function TemplatePage() {
       case 'key button': return <KeyboardIcon className="mr-2 h-4 w-4" />
       case 'sparkle button': return <StarIcon className="mr-2 h-4 w-4" />
       case 'command search': return <Command className="mr-2 h-4 w-4" />
+      case 'glitch text': return <TextCursorIcon className="mr-2 h-4 w-4" />
       default: return <ChevronRight className="mr-2 h-4 w-4" />
     }
   }
