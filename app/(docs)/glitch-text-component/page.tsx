@@ -27,7 +27,7 @@ function GlitchTextComponent() {
         <CardDescription className="text-balance text-lg text-muted-foreground">Glitch text animation with typing effect.</CardDescription>
       </div>
       
-      <Tabs defaultValue="preview" className="relative mr-auto w-full z-50">
+      <Tabs defaultValue="preview" className="relative mr-auto w-full z-0">
         <div className="flex items-center justify-between pb-3">
           <TabsList className="w-full justify-start rounded-none  bg-transparent p-0 z-50">
             <TabsTrigger value="preview" className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none">

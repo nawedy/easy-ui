@@ -212,12 +212,12 @@ export function SiteHeader() {
 
       {/* Side menu for small and medium screens */}
       <div
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-white text-black dark:bg-black dark:text-white  transform  ${
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-white text-black dark:bg-black dark:text-white  transform z-50 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out lg:hidden`}
       >
-        <div className="flex flex-col h-full p-0 py-6">
-          <div className="flex items-center justify-between mb-0 m-2">
+        <div className="flex flex-col h-full p-0 py-6 z-60">
+          <div className="flex items-center justify-between mb-0 m-2 z-60">
             <Link href="/" className="mr-6 flex items-center space-x-2">
               <img
                 src="https://pub-0cd6f9d4131f4f79ac40219248ae64db.r2.dev/logo.svg"
@@ -235,7 +235,7 @@ export function SiteHeader() {
               <X className="h-6 w-6" />
             </button>
           </div>
-          <nav className="flex flex-col space-y-4  bg-white text-black dark:bg-black dark:text-white ml-0 py-10 pl-4">
+          <nav className="flex flex-col space-y-4  bg-white text-black dark:bg-black dark:text-white ml-0 py-10 pl-4 z-60">
             <Link href="/" className="text-foreground hover:text-foreground/80 text-sm">
               Home
             </Link>
@@ -254,7 +254,7 @@ export function SiteHeader() {
             <Link href="https://premium.easyui.pro/" target="_blank" className="text-foreground hover:text-foreground/80 text-sm inline-flex items-center">Premium Templates<Icons.externalLink className="ml-2 size-4" /></Link>
             <Link href="https://mvp.easyui.pro/" target="_blank" className="text-foreground hover:text-foreground/80 text-sm inline-flex items-center">Easy MVP<Icons.externalLink className="ml-2 size-4" /></Link>
           
-          <p className="mt-auto flex flex-col space-y-4 leading-7 tracking-tight text-xs text-muted-foreground dark:text-gray-400  bg-white font-semibold dark:bg-black "> Socials</p>
+          <p className="mt-auto flex flex-col space-y-4 leading-7 tracking-tight text-xs text-muted-foreground dark:text-gray-400  bg-white font-semibold dark:bg-black z-60"> Socials</p>
             <Button
               variant="ghost"
               onClick={() =>
