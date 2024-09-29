@@ -50,7 +50,7 @@ const EasyHero: React.FC<EasyHeroProps> = ({ title, subtext, heroimage }) => {
   return (
     <>
       <motion.div
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 size-full"
         style={{
           backgroundImage:
             theme === "dark"
@@ -65,7 +65,7 @@ const EasyHero: React.FC<EasyHeroProps> = ({ title, subtext, heroimage }) => {
       />
 
       <motion.div
-        className="min-h-auto flex flex-col items-center justify-center bg-white dark:bg-black text-gray-900 dark:text-white relative before:absolute before:inset-0 before:bg-[radial-gradient(#e5e7eb_1px,_transparent_1px)] dark:before:bg-[radial-gradient(#1a202c_1px,_transparent_1px)] before:bg-[length:16px_16px] before:mask-[image:radial-gradient(ellipse_50%_50%_at_50%_50%,_#000_60%,_transparent_100%)] px-2"
+        className="min-h-auto before:mask-[image:radial-gradient(ellipse_50%_50%_at_50%_50%,_#000_60%,_transparent_100%)] relative flex flex-col items-center justify-center bg-white px-2 text-gray-900 before:absolute before:inset-0 before:bg-[radial-gradient(#e5e7eb_1px,_transparent_1px)] before:bg-[length:16px_16px] dark:bg-black dark:text-white dark:before:bg-[radial-gradient(#1a202c_1px,_transparent_1px)]"
         variants={flipVariant}
         animate={isFlipping ? "flipped" : "notFlipped"}
       >
@@ -78,13 +78,13 @@ const EasyHero: React.FC<EasyHeroProps> = ({ title, subtext, heroimage }) => {
           }}
         ></div>
         <main className="max-w-6xl justify-center mx-auto text-center py-2 relative z-10 flex flex-col items-center px-7">
-          <motion.img src="/star-dark.svg" alt="Star" className="w-20 h-20 absolute -bottom-20 left-0 hidden lg:block" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
-          <motion.img src="/star-dark.svg" alt="Star" className="w-20 h-20 absolute -top-20 right-0 hidden lg:block" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
+          <motion.img src="/star-dark.svg" alt="Star" className="size-20 absolute -bottom-20 left-0 hidden lg:block" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
+          <motion.img src="/star-dark.svg" alt="Star" className="size-20 absolute -top-20 right-0 hidden lg:block" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
 
           {theme === "dark" && (
             <>
-              <motion.img src="/star-light.svg" alt="Star" className="w-20 h-20 absolute -bottom-20 left-0 hidden lg:block" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
-              <motion.img src="/star-light.svg" alt="Star" className="w-20 h-20 absolute -top-20 right-0 hidden lg:block" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
+              <motion.img src="/star-light.svg" alt="Star" className="size-20 absolute -bottom-20 left-0 hidden lg:block" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
+              <motion.img src="/star-light.svg" alt="Star" className="size-20 absolute -top-20 right-0 hidden lg:block" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
             </>
           )}
 
@@ -95,9 +95,9 @@ const EasyHero: React.FC<EasyHeroProps> = ({ title, subtext, heroimage }) => {
             <div className="absolute -top-20 right-5 lg:left-20 ml-3  p-2 rounded-md dark:bg-transparent hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors z-50 w-[40px] hidden lg:block">
           <button onClick={toggleTheme} className="flex items-center justify-center">
             {theme === "dark" ? (
-              <FlipHorizontalIcon className="h-6 w-6" />
+              <FlipHorizontalIcon className="size-6" />
             ) : (
-              <FlipHorizontal2 className="h-6 w-6" />
+              <FlipHorizontal2 className="size-6" />
             )}
             <span className="sr-only">Toggle Theme</span>
           </button>
@@ -105,7 +105,7 @@ const EasyHero: React.FC<EasyHeroProps> = ({ title, subtext, heroimage }) => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 256 256"
-              className="w-24 h-24 absolute -left-0 lg:left-10  -top-9 transform rotate-39 fill-current ml-10 lg:ml-10 md:ml-12 hidden lg:block "
+              className="size-24 absolute -left-0 lg:left-10 -top-9  transform rotate-39 fill-current ml-10 lg:ml-10 md:ml-12 hidden lg:block "
             >
               <g>
                 <path

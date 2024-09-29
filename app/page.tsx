@@ -33,7 +33,7 @@ export default function IndexPage() {
   ]
   return (
     <section id="hero">
-      <div className="flex flex-col items-start gap-0 mt-20 lg:mt-20 md:mt-10 px-7 text-center md:items-center mx-auto pb-0 lg:pb-14 md:pb-14 sm:pb-0">
+      <div className="mx-auto mt-20 flex flex-col items-start gap-0 px-7 pb-0 text-center sm:pb-0 md:mt-10 md:items-center md:pb-14 lg:mt-20 lg:pb-14">
         <Announcement />
         {/* <div className="relative flex flex-col gap-4 md:items-center lg:flex-row">
           <h1 className="relative mx-0 max-w-[54.8rem] text-balance bg-gradient-to-br from-black from-50% to-neutral-200/60 bg-clip-text pt-5 text-left text-5xl font-semibold tracking-tighter text-transparent sm:text-7xl md:mx-auto md:px-4 md:py-2 md:text-center md:text-7xl lg:text-7xl dark:bg-gradient-to-br dark:from-white dark:to-neutral-200/60 dark:bg-clip-text dark:text-transparent">
@@ -104,13 +104,13 @@ export default function IndexPage() {
           <AvatarCircles numPeople={99} avatarUrls={avatarUrls} />
         </div>         */}
           <motion.div 
-            className="flex flex-col justify-center items-center mx-auto mt-10 mb-10 lg:mb-0 md:mb-0 gap-4"
+            className="mx-auto my-10 flex flex-col items-center justify-center gap-4 md:mb-0 lg:mb-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-lg font-semibold animate-pulse">Featured on</span>
-            <div className="flex justify-center items-center gap-4 z-50">
+            <span className="animate-pulse text-lg font-semibold">Featured on</span>
+            <div className="z-50 flex items-center justify-center gap-4">
               <a href="https://sourceforge.net/p/easy-ui/" className="dark:hidden">
                 <motion.img 
                   alt="Download Easy UI" 
@@ -129,7 +129,7 @@ export default function IndexPage() {
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 />
               </a>
-              <a href='https://www.saashub.com/easy-ui-pro?utm_source=badge&utm_campaign=badge&utm_content=easy-ui-pro&badge_variant=color&badge_kind=approved' target='_blank'>
+              <a href='https://www.saashub.com/easy-ui-pro?utm_source=badge&utm_campaign=badge&utm_content=easy-ui-pro&badge_variant=color&badge_kind=approved' target='_blank' rel="noreferrer">
                 <img src="https://cdn-b.saashub.com/img/badges/approved-color.png?v=1" alt="Easy UI Pro badge" style={{ maxWidth: "130px" }} className="ml-5"/>
               </a>
             </div>
@@ -139,16 +139,16 @@ export default function IndexPage() {
         <MarqueeDemo />
       </div>
 
-      <div className="pt-12 sm:pt-8 lg:pt-25 mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-        <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-3xl font-bold">
+      <div className="lg:pt-25 mx-auto flex max-w-[58rem] flex-col items-center space-y-4 pt-12 text-center sm:pt-8">
+        <h2 className="font-heading text-3xl font-bold leading-[1.1] sm:text-3xl md:text-3xl">
           Frequently asked questions
         </h2>
-        <p className="text-muted-foreground max-w-[85%] pb-1 sm:pb-1 lg:pb-10 leading-normal sm:text-lg sm:leading-7">
+        <p className="max-w-[85%] pb-1 leading-normal text-muted-foreground sm:pb-1 sm:text-lg sm:leading-7 lg:pb-10">
           Get detailed answers to common inquiries.
         </p>
       </div>
 
-      <div className="container my-10 sm:my-0 lg:my-0 md:my-0 flex max-w-[58rem] flex-col items-center justify-between gap-4 py-0">
+      <div className="container my-10 flex max-w-[58rem] flex-col items-center justify-between gap-4 py-0 sm:my-0 md:my-0 lg:my-0">
         <FaqPage />
       </div>
       <CTASection />
