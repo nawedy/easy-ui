@@ -104,30 +104,35 @@ export default function IndexPage() {
           <AvatarCircles numPeople={99} avatarUrls={avatarUrls} />
         </div>         */}
           <motion.div 
-            className="flex flex-col justify-center items-center mx-auto mt-10 mb-10 lg:mb-0 md:mb-0"
+            className="flex flex-col justify-center items-center mx-auto mt-10 mb-10 lg:mb-0 md:mb-0 gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             <span className="text-lg font-semibold animate-pulse">Featured on</span>
-            <a href="https://sourceforge.net/p/easy-ui/" className="dark:hidden">
-              <motion.img 
-                alt="Download Easy UI" 
-                src="https://sourceforge.net/sflogo.php?type=17&amp;group_id=3785509" 
-                width="200"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              />
-            </a>
-            <a href="https://sourceforge.net/p/easy-ui/" className="hidden dark:block">
-              <motion.img 
-                alt="Download Easy UI" 
-                src="https://sourceforge.net/sflogo.php?type=18&amp;group_id=3785509" 
-                width="200"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              />
-            </a>
+            <div className="flex justify-center items-center gap-4 z-50">
+              <a href="https://sourceforge.net/p/easy-ui/" className="dark:hidden">
+                <motion.img 
+                  alt="Download Easy UI" 
+                  src="https://sourceforge.net/sflogo.php?type=17&amp;group_id=3785509" 
+                  width="200"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                />
+              </a>
+              <a href="https://sourceforge.net/p/easy-ui/" className="hidden dark:block">
+                <motion.img 
+                  alt="Download Easy UI" 
+                  src="https://sourceforge.net/sflogo.php?type=18&amp;group_id=3785509" 
+                  width="200"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                />
+              </a>
+              <a href='https://www.saashub.com/easy-ui-pro?utm_source=badge&utm_campaign=badge&utm_content=easy-ui-pro&badge_variant=color&badge_kind=approved' target='_blank'>
+                <img src="https://cdn-b.saashub.com/img/badges/approved-color.png?v=1" alt="Easy UI Pro badge" style={{ maxWidth: "130px" }} className="ml-5"/>
+              </a>
+            </div>
           </motion.div>
         <Showcase />
         
