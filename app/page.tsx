@@ -63,7 +63,7 @@ export default function IndexPage() {
         </p> */}
 
       <EasyHero title="Collection of Premium Web Templates" subtext='50+ High Quality templates built with Next.js, React, Typescript, Tailwind CSS, and Framer Motion.' />
-        <div className="mx-0 flex w-full max-w-full flex-col gap-4 py-1 sm:max-w-lg sm:flex-row md:mx-auto">
+        <div className="mx-0 flex w-full max-w-full flex-col gap-4 py-5 sm:max-w-lg sm:flex-row md:mx-auto">
           <div className="flex w-full flex-col gap-2 sm:flex-row sm:gap-4">
             <Link
               href="/templates"
