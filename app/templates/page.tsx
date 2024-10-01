@@ -808,7 +808,7 @@
 
 import { useState, useEffect } from 'react'
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon } from 'lucide-react'
+import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, Airplay } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -845,6 +845,7 @@ import NewsletterPage from '../(docs)/ez-newsletter/page'
 import EasyStory from '../(docs)/ez-story/page'
 import EzDashboard from '../(docs)/ez-dashboard/page'
 import EzDocss from '../(docs)/ez-docs/page'
+import EzAI from '../(docs)/ez-ai/page'
 
 interface Item {
   name: string;
@@ -878,6 +879,7 @@ const components: Item[] = [
   { name: 'quotesai' },
   { name: 'designfast'},
   { name: 'retro'},
+  { name: 'ez-ai', isNew: true},
 ]
 
 export default function TemplatePage() {
@@ -951,6 +953,8 @@ export default function TemplatePage() {
         return <DesignfastPage />
       case 'retro':
         return <Retro />
+      case 'ez-ai':
+          return <EzAI />
       default:
         return <div>Component not found</div>
     }
@@ -983,6 +987,7 @@ export default function TemplatePage() {
       case 'introduction': return <ChevronRight className="mr-2 h-4 w-4" />
       case 'designfast': return <PaintBucketIcon className="mr-2 h-4 w-4" />
       case 'retro': return <PuzzleIcon className="mr-2 h-4 w-4" />
+      case 'ez-ai': return <Airplay className="mr-2 h-4 w-4" />
       default: return <ChevronRight className="mr-2 h-4 w-4" />
     }
   }
