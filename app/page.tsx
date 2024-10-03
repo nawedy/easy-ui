@@ -33,7 +33,7 @@ export default function IndexPage() {
   ]
   return (
     <section id="hero">
-      <div className="mx-auto mt-20 flex flex-col items-start gap-0 px-7 pb-0 text-center sm:pb-0 md:mt-10 md:items-center md:pb-14 lg:mt-20 lg:pb-14">
+      <div className="mx-auto mt-0 flex flex-col items-start gap-0 px-0 pb-0 text-center sm:pb-0 md:mt-10 md:items-center md:pb-14 lg:mt-20 lg:pb-14">
         <Announcement />
         {/* <div className="relative flex flex-col gap-4 md:items-center lg:flex-row">
           <h1 className="relative mx-0 max-w-[54.8rem] text-balance bg-gradient-to-br from-black from-50% to-neutral-200/60 bg-clip-text pt-5 text-left text-5xl font-semibold tracking-tighter text-transparent sm:text-7xl md:mx-auto md:px-4 md:py-2 md:text-center md:text-7xl lg:text-7xl dark:bg-gradient-to-br dark:from-white dark:to-neutral-200/60 dark:bg-clip-text dark:text-transparent">
@@ -63,7 +63,7 @@ export default function IndexPage() {
         </p> */}
 
       <EasyHero title="Starting your Next project ? Don't start from scratch" subtext='50+ High Quality templates built with Next.js, React, Typescript, Tailwind CSS, and Framer Motion.' />
-        <div className="mx-0 flex w-full max-w-full flex-col gap-4 py-5 sm:max-w-lg sm:flex-row md:mx-auto">
+        <div className="mx-0 flex w-full max-w-full flex-col gap-4 py-5 sm:max-w-lg sm:flex-row md:mx-auto px-8">
           <div className="flex w-full flex-col gap-2 sm:flex-row sm:gap-4">
             <Link
               href="/templates"
@@ -104,7 +104,7 @@ export default function IndexPage() {
           <AvatarCircles numPeople={99} avatarUrls={avatarUrls} />
         </div>         */}
           <motion.div 
-            className="mx-auto my-10 flex flex-col items-center justify-center gap-4 md:mb-0 lg:mb-0"
+            className="mx-auto my-10 flex flex-col items-center justify-center gap-4 md:mb-0 lg:mb-0 px-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
