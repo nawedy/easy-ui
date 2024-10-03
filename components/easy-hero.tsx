@@ -92,7 +92,7 @@ const EasyHero: React.FC<EasyHeroProps> = ({ title, subtext, heroimage }) => {
             <h1 className="relative mx-0 max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-[63.5rem] text-balance bg-gradient-to-br from-black from-30% to-black/60 bg-clip-text text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold leading-none tracking-tighter text-transparent dark:from-white dark:to-white/40">
               {title}
             </h1>
-            <div className="absolute -top-20 right-5 lg:left-20 ml-3  p-2 rounded-md dark:bg-transparent hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors z-50 w-[40px] hidden lg:block">
+            <div className="absolute -top-20 right-5 lg:left-2 ml-3  p-2 rounded-md dark:bg-transparent hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors z-50 w-[40px] hidden lg:block">
           <button onClick={toggleTheme} className="flex items-center justify-center">
             {theme === "dark" ? (
               <FlipHorizontalIcon className="size-6" />
@@ -105,7 +105,7 @@ const EasyHero: React.FC<EasyHeroProps> = ({ title, subtext, heroimage }) => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 256 256"
-              className="size-24 absolute -left-0 lg:left-10 -top-9  transform rotate-39 fill-current ml-10 lg:ml-10 md:ml-12 hidden lg:block "
+              className="size-24 absolute -left-0 lg:-left-8 -top-9  transform rotate-39 fill-current ml-10 lg:ml-10 md:ml-12 hidden lg:block "
             >
               <g>
                 <path
@@ -116,7 +116,7 @@ const EasyHero: React.FC<EasyHeroProps> = ({ title, subtext, heroimage }) => {
             </svg>
            
           </header>
-          <p className="mb-4 leading-7 tracking-tight font-normal max-w-full sm:max-w-xl md:max-w-[27.5rem] lg:max-w-[31.5rem] text-black dark:text-white text-xl">
+          <p className="mb-4 leading-7 tracking-tight font-semibold max-w-full sm:max-w-xl md:max-w-[27.5rem] lg:max-w-[31.5rem] text-black dark:text-white text-xl">
             {subtext}
           </p>
         </main>
