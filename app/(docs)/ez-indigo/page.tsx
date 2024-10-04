@@ -108,6 +108,20 @@ function EzIndigo() {
           </p>
         </div>
       </div>
+      <div className="text-center mt-8">
+          <p className="text-md text-gray-600 dark:text-white">
+            Credits to{" "}
+            <a
+              href="https://github.com/zouyuekun"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 dark:text-white font-bold hover:underline"
+            >
+              zouyuekun{" "}
+            </a>
+            for the fantastic hero section.
+          </p>
+        </div>
     </div>
   )
 }
