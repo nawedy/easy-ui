@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, Airplay } from 'lucide-react'
+import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, Airplay, CloudMoonRain } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -42,6 +42,7 @@ import EzDocss from '../(docs)/ez-docs/page'
 import EzAI from '../(docs)/ez-ai/page'
 import EzBeautiful from '../(docs)/ez-beautiful/page'
 import { ShadowInnerIcon } from '@radix-ui/react-icons'
+import EzIndigo from '../(docs)/ez-indigo/page'
 
 interface Item {
   name: string;
@@ -77,6 +78,7 @@ const components: Item[] = [
   { name: 'retro'},
   { name: 'ez-ai', isNew: true},
   { name: 'ez-beautiful', isNew: true},
+  { name: 'ez-indigo', isNew: true},
 ]
 
 export default function TemplatePage() {
@@ -154,6 +156,8 @@ export default function TemplatePage() {
           return <EzAI />
       case 'ez-beautiful':
           return <EzBeautiful />
+      case 'ez-indigo':
+          return <EzIndigo />
       default:
         return <div>Component not found</div>
     }
@@ -188,6 +192,7 @@ export default function TemplatePage() {
       case 'retro': return <PuzzleIcon className="mr-2 h-4 w-4" />
       case 'ez-ai': return <Airplay className="mr-2 h-4 w-4" />
       case 'ez-beautiful': return <ShadowInnerIcon className="mr-2 h-4 w-4" />
+      case 'ez-indigo': return <CloudMoonRain className="mr-2 h-4 w-4" />
       default: return <ChevronRight className="mr-2 h-4 w-4" />
     }
   }
