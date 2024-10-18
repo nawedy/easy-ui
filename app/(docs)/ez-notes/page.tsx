@@ -10,8 +10,8 @@ import { Badge } from "@/components/ui/badge"
 
 function NotesPage() {
   return (
-    <div className="flex flex-wrap justify-start gap-4 pb-10 max-w-full min-w-full px-0 lg:px-20">
-     <div className="w-full sm:w-1/2 p-2 mt-3 space-y-4 lg:mt-5 md:lg-5">
+<div className="flex flex-wrap justify-center gap-4 pb-10 max-w-full min-w-full px-2 lg:px-20">
+     <div className="w-full sm:w-2/3 p-2 mt-3 space-y-4 lg:mt-5 md:lg-5">
         <CardTitle className="text-3xl tracking-tight leading-7">Easy Notes</CardTitle>
         <CardDescription className="text-balance text-lg text-muted-foreground">
           Easy Landing Page template for Notes + Mini Notion Type Editor

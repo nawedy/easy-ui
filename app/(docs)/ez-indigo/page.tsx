@@ -10,8 +10,8 @@ import AdBanner from "@/components/ad-banner"
 
 function EzIndigo() {
   return (
-    <div className="flex flex-wrap justify-start gap-4 pb-10 max-w-full min-w-full px-0 lg:px-20">
-     <div className="w-full sm:w-1/2 p-2 mt-3 space-y-4 lg:mt-5 md:lg-5">
+    <div className="flex flex-wrap justify-center gap-4 pb-10 max-w-full min-w-full px-2 lg:px-20">
+     <div className="w-full sm:w-2/3 p-2 mt-3 space-y-4 lg:mt-5 md:lg-5">
         <CardTitle className="text-3xl tracking-tight leading-7">Easy Indigo</CardTitle>
         <CardDescription className="text-balance text-lg text-muted-foreground">
             Indigo Gradient template.
@@ -107,8 +107,7 @@ function EzIndigo() {
             and maximum impact!
           </p>
         </div>
-      </div>
-      <div className="text-center mt-8">
+        <div className="text-center mt-8">
           <p className="text-md text-gray-600 dark:text-white">
             Credits to{" "}
             <a
@@ -122,6 +121,8 @@ function EzIndigo() {
             for the fantastic hero section.
           </p>
         </div>
+      </div>
+     
     </div>
   )
 }
