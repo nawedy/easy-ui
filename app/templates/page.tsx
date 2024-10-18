@@ -376,6 +376,8 @@ export default function Component() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-8"
+            autoFocus
+            onBlur={(e) => e.target.focus()}
           />
         </div>
       </div>
