@@ -387,10 +387,11 @@ export default function Component() {
           {categories.map(category => (
             <label key={category} className="flex items-center space-x-2 rounded-lg p-2 hover:bg-accent cursor-pointer">
               <Checkbox
+              className='border-gray-300 dark:border-gray-500'
                 checked={selectedCategories.includes(category)}
                 onCheckedChange={() => handleCategoryChange(category)}
               />
-              <span className="text-sm">{category}</span>
+              <span className="text-sm dark:text-gray-100 text-gray-800 leading-2 tracking-tight">{category}</span>
             </label>
           ))}
         </ScrollArea>
@@ -400,10 +401,11 @@ export default function Component() {
         {difficulties.map(difficulty => (
           <label key={difficulty} className="flex items-center space-x-2 rounded-lg p-2 hover:bg-accent cursor-pointer">
             <Checkbox
+             className='border-gray-300 dark:border-gray-500'
               checked={selectedDifficulty.includes(difficulty)}
               onCheckedChange={() => handleDifficultyChange(difficulty)}
             />
-            <span className="text-sm">{difficulty}</span>
+            <span className="text-sm dark:text-gray-100 text-gray-800 leading-2 tracking-tight">{difficulty}</span>
           </label>
         ))}
       </div>
