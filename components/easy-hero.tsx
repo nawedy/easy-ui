@@ -78,7 +78,7 @@ const EasyHero: React.FC<EasyHeroProps> = ({ title, subtext, heroimage }) => {
           }}
         ></div>
         <main className="max-w-6xl justify-center mx-auto text-center py-2 relative z-10 flex flex-col items-center px-7">
-          <motion.img src="/star-dark.svg" alt="Star" className="size-20 absolute -bottom-20 left-0 hidden lg:block" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
+          {/* <motion.img src="/star-dark.svg" alt="Star" className="size-20 absolute -bottom-20 left-0 hidden lg:block" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
           <motion.img src="/star-dark.svg" alt="Star" className="size-20 absolute -top-20 right-0 hidden lg:block" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
 
           {theme === "dark" && (
@@ -86,7 +86,7 @@ const EasyHero: React.FC<EasyHeroProps> = ({ title, subtext, heroimage }) => {
               <motion.img src="/star-light.svg" alt="Star" className="size-20 absolute -bottom-20 left-0 hidden lg:block" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
               <motion.img src="/star-light.svg" alt="Star" className="size-20 absolute -top-20 right-0 hidden lg:block" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
             </>
-          )}
+          )} */}
 
           {/* <header className="mb-8 text-center">
             <h1 className="relative mx-0 max-w-full sm:max-w-3xl md:max-w-3xl lg:max-w-[78.5rem] text-balance bg-gradient-to-br from-black from-30% to-black/60 bg-clip-text text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold leading-none tracking-tighter text-transparent dark:from-white dark:to-white/40">
