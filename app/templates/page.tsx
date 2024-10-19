@@ -271,7 +271,7 @@
 
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -337,6 +337,20 @@ export default function Component() {
 
   const categories = Array.from(new Set(templates.map(template => template.category)))
   const difficulties = ['Beginner', 'Intermediate', 'Advanced']
+  const [shouldAutoFocus, setShouldAutoFocus] = useState(true)
+  const searchInputRef = useRef(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShouldAutoFocus(false)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   useEffect(() => {
     const filtered = templates.filter(template => 
@@ -364,11 +378,18 @@ export default function Component() {
     )
   }
 
+ 
+  const handleSearchClick = () => {
+    setShouldAutoFocus(true)
+     // @ts-ignore
+    searchInputRef.current?.focus()
+  }
+
   const Sidebar = () => (
     <div className="space-y-6">
       <div className="space-y-2">
         {/* <h2 className="text-lg font-semibold">Search</h2> */}
-        <div className="relative mt-10 lg:mt-0 md:mt-0">
+        {/* <div className="relative mt-10 lg:mt-0 md:mt-0">
           <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
             type="text"
@@ -378,6 +399,22 @@ export default function Component() {
             className="pl-8"
             autoFocus
             onBlur={(e) => e.target.focus()}
+          />
+        </div> */}
+         <div className="relative mt-10 lg:mt-0 md:mt-0">
+          <Search 
+            className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" 
+           
+          />
+          <Input
+            ref={searchInputRef}
+            type="text"
+            placeholder="Search templates..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="pl-8"
+            autoFocus={shouldAutoFocus}
+            onClick={handleSearchClick}
           />
         </div>
       </div>

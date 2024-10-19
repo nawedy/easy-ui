@@ -7,11 +7,12 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardDescription, CardTitle } from "@/components/ui/card"
 import { Icons } from "@/components/icons"
 import AdBanner from "@/components/ad-banner"
+import { Check } from "lucide-react"
 
 function DesignfastPage() {
   return (
-    <div className="flex flex-wrap justify-start gap-4 pb-10 max-w-full min-w-full px-0 lg:px-20">
-      <div className="w-full sm:w-1/2 p-2 mt-3 space-y-4 lg:mt-5 md:lg-5">
+    <div className="flex flex-wrap justify-center gap-4 pb-10 max-w-full min-w-full px-0 lg:px-20">
+      <div className="w-full sm:w-2/3 p-2 mt-3 space-y-4 lg:mt-5 md:lg-5">
         <CardTitle className="text-3xl tracking-tight leading-7">Designfast</CardTitle>
         <CardDescription className="text-balance text-lg text-muted-foreground">
           Minimal template designed for Service business
@@ -66,14 +67,105 @@ function DesignfastPage() {
             <li>✅ Deploy live to Vercel</li>
           </ul>
           <h3 className="text-2xl font-semibold leading-7">Tech Stack</h3>
-          <div className="flex flex-wrap justify-start -m-2 dark:text-white leading-7">
+          {/* <div className="flex flex-wrap justify-start -m-2 dark:text-white leading-7">
             <div className="p-2"><Badge className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-base py-0 px-4">React</Badge></div>
             <div className="p-2"><Badge className="bg-gradient-to-r from-green-500 to-blue-600 text-white text-base py-0 px-4">Next.js</Badge></div>
             <div className="p-2"><Badge className="bg-gradient-to-r from-pink-500 to-orange-500 text-white text-base py-0 px-4">Tailwind CSS</Badge></div>
             <div className="p-2"><Badge className="bg-gradient-to-r from-purple-500 to-pink-600 text-white text-base py-0 px-4">Daisy UI</Badge></div>
             <div className="p-2"><Badge className="bg-gradient-to-r from-yellow-500 to-red-600 text-white text-base py-0 px-4">Framer Motion</Badge></div>
             <div className="p-2"><Badge className="bg-gradient-to-r from-gray-500 to-gray-700 text-white text-base py-0 px-4">Vercel</Badge></div>
+          </div> */}
+           <div className=" mx-auto pb-3 px-0">
+      <div className="space-y-6">
+        {/* <h2 className="text-3xl font-bold tracking-tight">
+          Built with the latest technologies
+        </h2> */}
+        
+        <p className="text-gray-500 dark:text-gray-400 text-lg">
+          This template is built with the latest technologies and best practices in mind.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+          <div className="flex items-center space-x-3">
+            <div className="flex-shrink-0">
+              <Check className="h-5 w-5 text-green-500" />
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-base font-medium">Next.js</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">v14</span>
+            </div>
           </div>
+
+          <div className="flex items-center space-x-3">
+            <div className="flex-shrink-0">
+              <Check className="h-5 w-5 text-green-500" />
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-base font-medium">React</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">v18.3</span>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-3">
+            <div className="flex-shrink-0">
+              <Check className="h-5 w-5 text-green-500" />
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-base font-medium">TypeScript</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">v5</span>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-3">
+            <div className="flex-shrink-0">
+              <Check className="h-5 w-5 text-green-500" />
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-base font-medium">TailwindCSS</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">v3.4</span>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-3">
+            <div className="flex-shrink-0">
+              <Check className="h-5 w-5 text-green-500" />
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-base font-medium">Framer Motion</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">v11.3</span>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-3">
+            <div className="flex-shrink-0">
+              <Check className="h-5 w-5 text-green-500" />
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-base font-medium">next-themes</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">v0.3</span>
+            </div>
+          </div>
+
+          {/* <div className="flex items-center space-x-3">
+            <div className="flex-shrink-0">
+              <Check className="h-5 w-5 text-green-500" />
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-base font-medium">radix-ui</span>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-3">
+            <div className="flex-shrink-0">
+              <Check className="h-5 w-5 text-green-500" />
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-base font-medium">shadcn/ui</span>
+            </div>
+          </div> */}
+        </div>
+      </div>
+    </div>
           <h3 className="text-2xl font-semibold leading-7">Quick Setup</h3>
           <ul className="list-disc pl-5 space-y-2 text-md tracking-tight font-[500] leading-7">
             <li>
