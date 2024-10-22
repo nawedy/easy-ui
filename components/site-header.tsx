@@ -152,7 +152,7 @@ export function SiteHeader() {
                 variant="ghost"
                 size="icon"
                 onClick={() =>
-                  window.open("https://discord.gg/7yTP7KGK", "_blank")
+                  window.open("https://discord.gg/YszGr33b", "_blank")
                 }
               >
                 <Icons.discord
@@ -258,7 +258,7 @@ export function SiteHeader() {
             <Button
               variant="ghost"
               onClick={() =>
-                window.open("https://discord.gg/7yTP7KGK", "_blank")
+                window.open("https://discord.gg/YszGr33b", "_blank")
               }
               className="flex items-start justify-start !px-0 !h-4 "
             >
