@@ -298,6 +298,7 @@ interface Template {
 const templates: Template[] = [
   { name: 'Introduction', image: 'https://images.unsplash.com/photo-1663465374413-83cba00bff6f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cXVlc3Rpb24lMjBtYXJrfGVufDB8fDB8fHww', path: '/introduction', description: 'Get started with our templates', category: 'General', difficulty: 'Beginner' },
   { name: 'EZ Beautiful', image: '/ez-beautiful.png', path: '/ez-beautiful', description: 'Design stunning interfaces', isNew: true, category: 'Design', difficulty: 'Beginner' },
+  { name: 'EZ Premium', image: '/ez-premium.png', path: '/ez-premium', description: 'Pre-built Boilerplate with Auth & Stripe', isNew: true, category: 'Productivity', difficulty: 'Advanced' },
   { name: 'EZ Indigo', image: '/ez-indigo.png', path: '/ez-indigo', description: 'Create with an indigo theme', isNew: true, category: 'Design', difficulty: 'Beginner' },
   { name: 'EZ Design', image: '/ez-design.png', path: '/ez-design', description: 'Create beautiful designs effortlessly', category: 'Design', difficulty: 'Beginner' },
   { name: 'EZ Newsletter', image: '/ez-newsletter.png', path: '/ez-newsletter', description: 'Design eye-catching newsletters', isNew: true, category: 'Email', difficulty: 'Beginner' },
@@ -324,6 +325,7 @@ const templates: Template[] = [
   { name: 'EZ Blog', image: '/ez-blog.png', path: '/ez-blog', description: 'Create a stunning blog with ease', isNew: true, category: 'Blog', difficulty: 'Advanced' },
   { name: 'EZ Chatbot', image: '/ez-chatbot.png', path: '/ez-chatbot', description: 'Implement a chatbot for your website', category: 'AI', difficulty: 'Beginner' },
   { name: 'EZ AI', image: '/ez-ai.png', path: '/ez-ai', description: 'Implement AI features easily', isNew: true, category: 'AI', difficulty: 'Intermediate' },
+
  
 ]
 
