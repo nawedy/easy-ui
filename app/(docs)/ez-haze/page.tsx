@@ -52,7 +52,7 @@ export default function EzHaze() {
         <CardHeader>
           <CardTitle className="text-3xl font-bold">Easy Haze</CardTitle>
           <CardDescription className="text-xl">
-            Pre-built Boilerplate with Supabase, Stripe, Magic UI and more.
+            Haze themed Landing page template.
           </CardDescription>
         </CardHeader>
         <CardContent>
