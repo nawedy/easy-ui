@@ -233,8 +233,10 @@ export default function Component() {
     { name: "next-themes", version: "v0.3" },
     { name: "Magic UI", version: "Latest" },
     { name: "Shadcn UI", version: "Latest" },
+    { name: "Supabse", version: "Latest" },
     { name: "Stripe", version: "Latest" },
     { name: "FumaDocs", version: "Latest" },
+    { name: "Crisp", version: "Latest" },
   ]
 
   return (
