@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react'
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, LucideGitBranchPlus, KeyIcon, Command, TextCursorIcon } from 'lucide-react'
+import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, LucideGitBranchPlus, KeyIcon, Command, TextCursorIcon, EggFriedIcon } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,6 +26,8 @@ import SearchCommand from '@/components/easyui/search-command'
 import SearchCommandComponent from '../(docs)/search-command-component/page'
 import GlitchTextComponent from '../(docs)/glitch-text-component/page'
 import IdeaFormComponent from '../(docs)/idea-form-component/page'
+import FireflyButton from '@/components/easyui/firefly-button'
+import FireFlyButtonComponent from '../(docs)/firefly-button-component/page'
 
 interface Item {
   name: string;
@@ -42,6 +44,7 @@ const components: Item[] = [
   { name: 'command search', isNew: true},
   { name: 'glitch text', isNew: true},
   { name: 'idea form', isNew: true},
+  { name: 'firefly button', isNew: true},
 ]
 
 export default function TemplatePage() {
@@ -81,6 +84,8 @@ export default function TemplatePage() {
           return <GlitchTextComponent />
       case 'idea form':
             return <IdeaFormComponent />
+      case 'firefly button':
+            return <FireFlyButtonComponent />
 
       default:
         return <div>Component not found</div>
@@ -96,6 +101,7 @@ export default function TemplatePage() {
       case 'command search': return <Command className="mr-2 h-4 w-4" />
       case 'glitch text': return <TextCursorIcon className="mr-2 h-4 w-4" />
       case 'idea form': return <QuestionMarkCircledIcon className="mr-2 h-4 w-4" />
+      case 'firefly button': return <EggFriedIcon className="mr-2 h-4 w-4" />
       default: return <ChevronRight className="mr-2 h-4 w-4" />
     }
   }
