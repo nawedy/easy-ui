@@ -202,7 +202,7 @@ import { Check, ChevronDown, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { Icons } from "@/components/icons"
 
-export default function Component() {
+export default function EzPremium() {
   const features = [
     "Landing Page with 14+ sections",
     "Header Section",

@@ -322,6 +322,7 @@ const templates: Template[] = [
   { name: 'QuotesAI', image: '/ez-quotes.png', path: '/quotesai', description: 'Generate AI-powered quotes', category: 'AI', difficulty: 'Intermediate' },
   { name: 'Designfast', image: '/ez-designfast.png', path: '/designfast', description: 'Rapid design prototyping', category: 'Design', difficulty: 'Beginner' },
   { name: 'Retro', image: '/ez-retro.png', path: '/retro', description: 'Create with a retro aesthetic', category: 'Design', difficulty: 'Intermediate' },
+  { name: 'EZ Haze', image: '/ez-haze.png', path: '/ez-haze', description: 'Haze themed website', category: 'Landing Page', difficulty: 'Beginner' },
   { name: 'EZ Blog', image: '/ez-blog.png', path: '/ez-blog', description: 'Create a stunning blog with ease', isNew: true, category: 'Blog', difficulty: 'Advanced' },
   { name: 'EZ Chatbot', image: '/ez-chatbot.png', path: '/ez-chatbot', description: 'Implement a chatbot for your website', category: 'AI', difficulty: 'Beginner' },
   { name: 'EZ AI', image: '/ez-ai.png', path: '/ez-ai', description: 'Implement AI features easily', isNew: true, category: 'AI', difficulty: 'Intermediate' },
