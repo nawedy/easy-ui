@@ -15,20 +15,15 @@ import {
 } from "@/components/ui/card"
 import { Icons } from "@/components/icons"
 
-export default function EzHaze() {
+export default function EzGlow() {
   const features = [
-    "1x Landing Page",
-    "14+ sections",
     "Header Section",
     "Hero Section",
-    "3x Features Section",
-    "Templates Section",
-    "Usecase Section",
+    "Social Proof Section",
     "Pricing Section",
-    "About Section",
-    "FAQ Section",
-    "CTA Section",
+    "Call To Action Section",
     "Footer Section",
+    "Mobile Responsive Navbar",
   ]
 
   const techStack = [
@@ -38,7 +33,7 @@ export default function EzHaze() {
     { name: "TailwindCSS", version: "v3.4" },
     { name: "Framer Motion", version: "v11.3" },
     { name: "next-themes", version: "v0.3" },
-    // { name: "Magic UI", version: "Latest" },
+    { name: "Magic UI", version: "Latest" },
     { name: "Shadcn UI", version: "Latest" },
     // { name: "Supabse", version: "Latest" },
     // { name: "Stripe", version: "Latest" },
@@ -50,9 +45,9 @@ export default function EzHaze() {
     <div className="container mx-auto px-4 py-8 lg:max-w-[65%]">
       <Card className="mb-0 border-none shadow-none">
         <CardHeader>
-          <CardTitle className="text-3xl font-bold">Easy Haze</CardTitle>
+          <CardTitle className="text-3xl font-bold">Easy Glow</CardTitle>
           <CardDescription className="text-xl">
-            Haze themed Landing page template.
+            Template for Startups
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -65,7 +60,7 @@ export default function EzHaze() {
               playsInline
             >
               <source
-                src="https://pub-0cd6f9d4131f4f79ac40219248ae64db.r2.dev/ez-haze.mp4"
+                src="https://pub-0cd6f9d4131f4f79ac40219248ae64db.r2.dev/easy-glow.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
@@ -89,7 +84,7 @@ export default function EzHaze() {
                 className="flex-1"
                 variant="outline"
                 onClick={() =>
-                  window.open("https://easy-haze.vercel.app/", "_blank")
+                  window.open("https://easy-glow.vercel.app/", "_blank")
                 }
               >
                 Live Preview
