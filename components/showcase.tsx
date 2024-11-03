@@ -817,7 +817,7 @@ export default function ShowcaseGrid() {
             key={index}
             className="block "
           >
-            <Card className="h-full overflow-hidden border-gray-100 dark:border-gray-900">
+            <Card className="h-full overflow-hidden border-gray-100 rounded-2xl dark:border-gray-900">
               <CardHeader>
                 <CardTitle className="flex items-center justify-between leading-7 tracking-tight font-semibold text-lg">
                   {item.title}
