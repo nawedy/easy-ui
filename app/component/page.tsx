@@ -17,7 +17,7 @@ import IntroductionPage from '../(docs)/introduction/page'
 import CreateNewComponentt from '../(docs)/create-new-component/page'
 import LaunchpadComponent from '../(docs)/launchpad-component/page'
 import KeyButton from '@/components/easyui/key-button'
-import { KeyboardIcon, QuestionMarkCircledIcon, QuestionMarkIcon, StarFilledIcon, StarIcon } from '@radix-ui/react-icons'
+import { KeyboardIcon, Pencil1Icon, QuestionMarkCircledIcon, QuestionMarkIcon, StarFilledIcon, StarIcon } from '@radix-ui/react-icons'
 import SparkleButton from '@/components/easyui/sparkle-button'
 import KeyButtonComponent from '../(docs)/key-button-component/page'
 import SparkleButtonComponent from '../(docs)/sparkle-button-component/page'
@@ -28,6 +28,7 @@ import GlitchTextComponent from '../(docs)/glitch-text-component/page'
 import IdeaFormComponent from '../(docs)/idea-form-component/page'
 import FireflyButton from '@/components/easyui/firefly-button'
 import FireFlyButtonComponent from '../(docs)/firefly-button-component/page'
+import SignatureAnimationComponent from '../(docs)/signature-animation-component/page'
 
 interface Item {
   name: string;
@@ -45,6 +46,7 @@ const components: Item[] = [
   { name: 'glitch text', isNew: true},
   { name: 'idea form', isNew: true},
   { name: 'firefly button', isNew: true},
+  { name: 'sign animation', isNew: true},
 ]
 
 export default function TemplatePage() {
@@ -86,6 +88,8 @@ export default function TemplatePage() {
             return <IdeaFormComponent />
       case 'firefly button':
             return <FireFlyButtonComponent />
+      case 'sign animation':
+            return <SignatureAnimationComponent />
 
       default:
         return <div>Component not found</div>
@@ -102,6 +106,7 @@ export default function TemplatePage() {
       case 'glitch text': return <TextCursorIcon className="mr-2 h-4 w-4" />
       case 'idea form': return <QuestionMarkCircledIcon className="mr-2 h-4 w-4" />
       case 'firefly button': return <EggFriedIcon className="mr-2 h-4 w-4" />
+      case 'sign animation': return <Pencil1Icon className="mr-2 h-4 w-4" />
       default: return <ChevronRight className="mr-2 h-4 w-4" />
     }
   }
