@@ -8,6 +8,7 @@ import { CardDescription, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import FireflyButton from "@/components/easyui/firefly-button"
 import { AdvancedSignatureCreatorComponent } from "@/components/easyui/signature-animation"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 export default function SignatureAnimationComponent() {
   const [key, setKey] = useState(0)
@@ -35,6 +36,178 @@ export default function SignatureAnimationComponent() {
   const handleSignCopy = (signature: string) => {
     console.log("Signature copied:", signature)
   }
+
+  const props = [
+    {
+      name: "initialName",
+      type: "string",
+      default: '""',
+      description: "The initial name to be displayed in the signature field.",
+    },
+    {
+      name: "fontFamilies",
+      type: "FontFamily[]",
+      default: "defaultFontFamilies",
+      description: "An array of font family options for the signature.",
+    },
+    {
+      name: "signatureStyles",
+      type: "SignatureStyle[]",
+      default: "defaultSignatureStyles",
+      description: "An array of signature style options.",
+    },
+    {
+      name: "colors",
+      type: "string[]",
+      default: "defaultColors",
+      description: "An array of color options for the signature.",
+    },
+    {
+      name: "initialFontFamily",
+      type: "string",
+      default: "defaultFontFamilies[0].value",
+      description: "The initial font family to be used for the signature.",
+    },
+    {
+      name: "initialSignatureStyle",
+      type: "string",
+      default: "defaultSignatureStyles[0].value",
+      description: "The initial signature style to be applied.",
+    },
+    {
+      name: "initialColor",
+      type: "string",
+      default: "defaultColors[1]",
+      description: "The initial color to be used for the signature.",
+    },
+    {
+      name: "initialSize",
+      type: "number",
+      default: "48",
+      description: "The initial size of the signature text.",
+    },
+    {
+      name: "minSize",
+      type: "number",
+      default: "24",
+      description: "The minimum allowed size for the signature text.",
+    },
+    {
+      name: "maxSize",
+      type: "number",
+      default: "72",
+      description: "The maximum allowed size for the signature text.",
+    },
+    {
+      name: "placeholder",
+      type: "string",
+      default: '"Enter your name"',
+      description: "The placeholder text for the signature input field.",
+    },
+    {
+      name: "signButtonText",
+      type: "string",
+      default: '"SIGN"',
+      description: "The text to be displayed on the sign button.",
+    },
+    {
+      name: "copiedText",
+      type: "string",
+      default: '"Copied!"',
+      description: "The text to be displayed when the signature is copied.",
+    },
+    {
+      name: "copyText",
+      type: "string",
+      default: '"Copy Signature"',
+      description: "The text to be displayed on the copy button.",
+    },
+    {
+      name: "signedByText",
+      type: "string",
+      default: '"SIGNED BY,"',
+      description: "The text to be displayed above the signature.",
+    },
+    {
+      name: "onSign",
+      type: "(signature: string) => void",
+      default: "undefined",
+      description: "A callback function to be called when the signature is created.",
+    },
+    {
+      name: "onCopy",
+      type: "(signature: string) => void",
+      default: "undefined",
+      description: "A callback function to be called when the signature is copied.",
+    },
+    {
+      name: "className",
+      type: "string",
+      default: '""',
+      description: "Additional CSS classes to be applied to the component.",
+    },
+    {
+      name: "showControls",
+      type: "boolean",
+      default: "true",
+      description: "Whether to show the control buttons (undo, redo, etc.).",
+    },
+    {
+      name: "showColorPalette",
+      type: "boolean",
+      default: "true",
+      description: "Whether to show the color palette for signature customization.",
+    },
+    {
+      name: "showFontSelector",
+      type: "boolean",
+      default: "true",
+      description: "Whether to show the font selector for signature customization.",
+    },
+    {
+      name: "showStyleSelector",
+      type: "boolean",
+      default: "true",
+      description: "Whether to show the style selector for signature customization.",
+    },
+    {
+      name: "showSizeSlider",
+      type: "boolean",
+      default: "true",
+      description: "Whether to show the size slider for signature customization.",
+    },
+    {
+      name: "animationDuration",
+      type: "number",
+      default: "2000",
+      description: "The duration of the signature animation in milliseconds.",
+    },
+    {
+      name: "undoLimit",
+      type: "number",
+      default: "10",
+      description: "The maximum number of undo steps allowed.",
+    },
+    {
+      name: "backgroundColor",
+      type: "string",
+      default: '"transparent"',
+      description: "The background color of the signature component.",
+    },
+    {
+      name: "signButtonColor",
+      type: "string",
+      default: '"black"',
+      description: "The color of the sign button.",
+    },
+    {
+      name: "signButtonTextColor",
+      type: "string",
+      default: '"white"',
+      description: "The color of the text on the sign button.",
+    },
+  ]
+
 
   const codeString = `
 "use client"
@@ -573,6 +746,12 @@ export function AdvancedSignatureCreatorComponent({
             >
               Code
             </TabsTrigger>
+            <TabsTrigger
+              value="props"
+              className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none dark:text-gray-300 dark:data-[state=active]:text-white"
+            >
+              Props
+            </TabsTrigger>
           </TabsList>
         </div>
         <TabsContent value="preview" className="relative rounded-md" key={key}>
@@ -727,11 +906,31 @@ export default MyComponent
             </div>
           </div>
         </TabsContent>
+        <TabsContent value="props" className="relative rounded-md">
+          <div className="w-full overflow-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[150px]">Prop</TableHead>
+                  <TableHead>Type</TableHead>
+                  <TableHead>Default</TableHead>
+                  <TableHead className="min-w-[300px]">Description</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {props.map((prop) => (
+                  <TableRow key={prop.name}>
+                    <TableCell className="font-medium">{prop.name}</TableCell>
+                    <TableCell>{prop.type}</TableCell>
+                    <TableCell>{prop.default}</TableCell>
+                    <TableCell>{prop.description}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </TabsContent>
       </Tabs>
-      {/* <div className="py-10 ml-3">
-        <h2 className="font-heading mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0">Credits</h2>
-        <p className="leading-7 [&:not(:first-child)]:mt-6 tracking-tight">Credit to <a href="https://codepen.io/ShaeSco/pen/xxeeeam" className="font-bold italic underline">@xxeeeam</a> for the inspiration behind this component.</p>
-      </div> */}
     </div>
   )
 }
