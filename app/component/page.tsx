@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react'
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, LucideGitBranchPlus, KeyIcon, Command, TextCursorIcon, EggFriedIcon } from 'lucide-react'
+import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, LucideGitBranchPlus, KeyIcon, Command, TextCursorIcon, EggFriedIcon, FileSignature } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,6 +29,9 @@ import IdeaFormComponent from '../(docs)/idea-form-component/page'
 import FireflyButton from '@/components/easyui/firefly-button'
 import FireFlyButtonComponent from '../(docs)/firefly-button-component/page'
 import SignatureAnimationComponent from '../(docs)/signature-animation-component/page'
+import FeatureCard from '@/components/easyui/feature-card'
+import Features from '../features/page'
+import FeatureCardComponent from '../(docs)/feature-card-component/page'
 
 interface Item {
   name: string;
@@ -47,6 +50,7 @@ const components: Item[] = [
   { name: 'idea form', isNew: true},
   { name: 'firefly button', isNew: true},
   { name: 'sign animation', isNew: true},
+  { name: 'feature card', isNew: true},
 ]
 
 export default function TemplatePage() {
@@ -90,6 +94,8 @@ export default function TemplatePage() {
             return <FireFlyButtonComponent />
       case 'sign animation':
             return <SignatureAnimationComponent />
+      case 'feature card':
+            return <FeatureCardComponent />
 
       default:
         return <div>Component not found</div>
@@ -107,6 +113,7 @@ export default function TemplatePage() {
       case 'idea form': return <QuestionMarkCircledIcon className="mr-2 h-4 w-4" />
       case 'firefly button': return <EggFriedIcon className="mr-2 h-4 w-4" />
       case 'sign animation': return <Pencil1Icon className="mr-2 h-4 w-4" />
+      case 'feature card': return <FileSignature className="mr-2 h-4 w-4" />
       default: return <ChevronRight className="mr-2 h-4 w-4" />
     }
   }
