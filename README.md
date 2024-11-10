@@ -8,7 +8,7 @@
   <a href="https://github.com/DarkInventor/easy-ui/stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/DarkInventor/easy-ui"></a>
   <a href="https://twitter.com/kathanmehtaa"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/kathanmehtaa"></a>
   <a href="https://github.com/DarkInventor/easy-ui/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
-  <a href="https://discord.gg/YszGr33b"><img alt="Discord" src="https://img.shields.io/discord/1267194703439462502"></a>
+  <a href="https://discord.gg/9PZpwYXA"><img alt="Discord" src="https://img.shields.io/discord/1267194703439462502"></a>
 </div>
 
 
