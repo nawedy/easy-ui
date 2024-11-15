@@ -673,7 +673,7 @@ export default function Component() {
 
   const Sidebar = () => (
     <div className="space-y-6">
-      <div className="space-y-2">
+      <div className="space-y-2 ">
         <div className="relative mt-10 lg:mt-0 md:mt-0">
           <Search 
             className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" 
@@ -686,7 +686,7 @@ export default function Component() {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-8"
             autoFocus={shouldAutoFocus}
-            onClick={handleSearchClick}
+            onClick={handleSearchClick}            
           />
         </div>
       </div>

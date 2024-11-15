@@ -92,14 +92,14 @@ const EasyHero: React.FC<EasyHeroProps> = ({ title, subtext, heroimage }) => {
             </div>
           </header>
           <div className="flex flex-row gap-0">
-            <p className="mb-4 leading-7 mt-7 tracking-tight font-normal max-w-full sm:max-w-xl md:max-w-[27.5rem] lg:max-w-[35.5rem] text-black dark:text-white text-xl">
+            <p className="mb-4 leading-7 mt-7 tracking-normal sm:max-w-xl md:max-w-[27.5rem] lg:max-w-[35.5rem] dark:text-muted-foreground text-gray-700 max-w-4xl  text-xl">
               Kickstart with{" "}
               <span className="font-semibold">beautifully designed </span>
               website templates built with{" "}
               <span className="font-semibold">
-                React, Typescript, Tailwind CSS,
+                React, Typescript, Tailwind CSS,  
               </span>{" "}
-              and <span className="font-semibold">Framer Motion</span>.
+              and <span className="font-semibold">Shadcn UI, Framer Motion</span>.
             </p>
           </div>
         </main>

@@ -42,6 +42,15 @@ export function MainNav() {
         >
           Components
         </Link>
+        <Link
+          href="/easy-mvp-pricing"
+          className={cn(
+            isActive("/easy-mvp-pricing") ? "text-foreground" : "text-foreground/60",
+            "transition-colors hover:text-foreground/80"
+          )}
+        >
+          Pricing
+        </Link>
         
         <Link
           href={siteConfig.links.github}
@@ -61,7 +70,7 @@ export function MainNav() {
         >
           Premium Templates <Icons.externalLink className="ml-2 size-4" />
         </Link>
-        <Link
+        {/* <Link
           href="https://mvp.easyui.pro/"
           className={cn(
             isActive("https://mvp.easyui.pro/") ? "text-foreground" : "text-foreground/60",
@@ -69,7 +78,7 @@ export function MainNav() {
           )}
         >
           Easy MVP <Icons.externalLink className="ml-2 size-4" />
-        </Link>
+        </Link> */}
       </nav>
     </div>
   )
