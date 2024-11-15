@@ -251,6 +251,12 @@ export function SiteHeader() {
             >
               Components
             </Link>
+            <Link
+              href="/easy-mvp-pricing"
+              className="text-foreground hover:text-foreground/80 text-sm"
+            >
+              Pricing
+            </Link>
             <Link href="https://premium.easyui.pro/" target="_blank" className="text-foreground hover:text-foreground/80 text-sm inline-flex items-center">Premium Templates<Icons.externalLink className="ml-2 size-4" /></Link>
             <Link href="https://mvp.easyui.pro/" target="_blank" className="text-foreground hover:text-foreground/80 text-sm inline-flex items-center">Easy MVP<Icons.externalLink className="ml-2 size-4" /></Link>
           

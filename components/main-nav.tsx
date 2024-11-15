@@ -52,7 +52,7 @@ export function MainNav() {
           Pricing
         </Link>
         
-        <Link
+        {/* <Link
           href={siteConfig.links.github}
           className={cn(
             isActive(siteConfig.links.github) ? "text-foreground" : "text-foreground/60",
@@ -60,7 +60,7 @@ export function MainNav() {
           )}
         >
           GitHub <Icons.externalLink className="ml-2 size-4" />
-        </Link>
+        </Link> */}
         <Link
           href="https://premium.easyui.pro/"
           className={cn(
