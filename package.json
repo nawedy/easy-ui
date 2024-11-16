@@ -13,7 +13,7 @@
     "preview": "next build && next start",
     "typecheck": "tsc --noEmit",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
-    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"    
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
     "-": "^0.0.1",
@@ -48,7 +48,7 @@
     "date-fns": "^3.6.0",
     "disqus-react": "^1.1.5",
     "mini-svg-data-uri": "^1.4.4",
-    "next": "^14.2.5",
+    "next": "^15.0.3",
     "next-template": "link:",
     "next-themes": "^0.2.1",
     "posthog-js": "^1.140.1",

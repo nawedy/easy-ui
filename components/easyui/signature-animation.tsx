@@ -248,17 +248,16 @@ export function AdvancedSignatureCreatorComponent({
 
   return (
     <div
-      className={`min-h-screen flex items-center justify-center p-4 ${className}`}
+      className={`flex min-h-screen items-center justify-center p-4 ${className}`}
       style={{ backgroundColor }}
     >
-      <div className="w-full max-w-[500px] bg-transparent dark:text-white backdrop-blur-xl p-6 md:p-8 shadow-xl border rounded-2xl">
+      <div className="w-full max-w-[500px] rounded-2xl border bg-transparent p-6 shadow-xl backdrop-blur-xl dark:text-white md:p-8">
         {/* Input Container */}
         <div className="relative mb-6">
-          <div className="flex items-stretch h-[60px] bg-zinc-100/80 rounded-full border border-zinc-200/50 overflow-hidden">
+          <div className="flex h-[60px] items-stretch overflow-hidden rounded-full border border-zinc-200/50 bg-zinc-100/80">
             <input
               type="text"
-              className="flex-1 px-4 md:px-6 bg-transparent border-none outline-none text-lg md:text-xl text-black dark:text-black 
-                         font-sans placeholder:text-zinc-400"
+              className="flex-1 border-none bg-transparent px-4 font-sans text-lg text-black outline-none placeholder:text-zinc-400 dark:text-black md:px-6 md:text-xl"
               placeholder={placeholder}
               value={name}
               onChange={handleInputChange}
@@ -267,12 +266,12 @@ export function AdvancedSignatureCreatorComponent({
             <button
               onClick={handleSign}
               className={`
-                px-4 md:px-6 m-2 rounded-full flex items-center gap-0
-                transition-all duration-300 font-mono text-sm tracking-wide text-black dark:text-black
+                m-2 flex items-center gap-0 rounded-full px-4 font-mono
+                text-sm tracking-wide text-black transition-all duration-300 dark:text-black md:px-6
                 ${
                   isActive
                     ? "opacity-100 hover:opacity-80"
-                    : "opacity-50 cursor-not-allowed"
+                    : "cursor-not-allowed opacity-50"
                 }
                 ${isSigning ? "scale-95" : ""}
               `}
@@ -282,7 +281,7 @@ export function AdvancedSignatureCreatorComponent({
               }}
               disabled={!isActive}
             >
-              <PencilIcon className="w-4 h-4" />
+              <PencilIcon className="size-4" />
               <span className="hidden md:inline">{signButtonText}</span>
             </button>
           </div>
@@ -290,21 +289,21 @@ export function AdvancedSignatureCreatorComponent({
 
         {/* Controls */}
         {showControls && (
-          <div className="flex flex-wrap justify-between mb-6 gap-2">
+          <div className="mb-6 flex flex-wrap justify-between gap-2">
             <div className="flex gap-2">
               <button
                 onClick={handleUndo}
-                className="p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 transition-colors"
+                className="rounded-full bg-zinc-100 p-2 transition-colors hover:bg-zinc-200"
                 title="Undo"
               >
-                <UndoIcon className="w-5 h-5 text-black dark:text-black" />
+                <UndoIcon className="size-5 text-black dark:text-black" />
               </button>
               <button
                 onClick={handleRedo}
-                className="p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 transition-colors"
+                className="rounded-full bg-zinc-100 p-2 transition-colors hover:bg-zinc-200"
                 title="Redo"
               >
-                <RedoIcon className="w-5 h-5 text-black dark:text-black" />
+                <RedoIcon className="size-5 text-black dark:text-black" />
               </button>
             </div>
             <div className="flex gap-2">
@@ -312,7 +311,7 @@ export function AdvancedSignatureCreatorComponent({
                 <select
                   value={fontFamily}
                   onChange={(e) => setFontFamily(e.target.value)}
-                  className="p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 transition-colors text-black dark:text-black"
+                  className="rounded-full bg-zinc-100 p-2 text-black transition-colors hover:bg-zinc-200 dark:text-black"
                   title="Font Family"
                 >
                   {fontFamilies.map((font) => (
@@ -326,7 +325,7 @@ export function AdvancedSignatureCreatorComponent({
                 <select
                   value={signatureStyle}
                   onChange={(e) => setSignatureStyle(e.target.value)}
-                  className="p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 transition-colors text-black dark:text-black"
+                  className="rounded-full bg-zinc-100 p-2 text-black transition-colors hover:bg-zinc-200 dark:text-black"
                   title="Signature Style"
                 >
                   {signatureStyles.map((style) => (
@@ -340,18 +339,18 @@ export function AdvancedSignatureCreatorComponent({
                 <div className="relative" ref={colorPaletteRef}>
                   <button
                     onClick={toggleColorPalette}
-                    className="p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 transition-colors"
+                    className="rounded-full bg-zinc-100 p-2 transition-colors hover:bg-zinc-200"
                     title="Signature Color"
                   >
-                    <PaletteIcon className="w-5 h-5 text-black dark:text-black" />
+                    <PaletteIcon className="size-5 text-black dark:text-black" />
                   </button>
                   {isColorPaletteOpen && (
-                    <div className="absolute top-full mt-2 right-0 bg-white rounded-lg shadow-lg p-2 flex gap-2 z-10">
+                    <div className="absolute right-0 top-full z-10 mt-2 flex gap-2 rounded-lg bg-white p-2 shadow-lg">
                       {colors.map((c) => (
                         <button
                           key={c}
                           onClick={() => handleColorSelect(c)}
-                          className="w-6 h-6 rounded-full"
+                          className="size-6 rounded-full"
                           style={{ backgroundColor: c }}
                         />
                       ))}
@@ -366,17 +365,17 @@ export function AdvancedSignatureCreatorComponent({
         {/* Signature Preview */}
         <div
           className={`transition-all duration-500 ${
-            isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            isActive ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
-          <div className="font-mono text-sm text-zinc-400 tracking-wide mb-4 ">
+          <div className="mb-4 font-mono text-sm tracking-wide text-zinc-400 ">
             {signedByText}
           </div>
           <div className="signature-container relative ">
             <svg
               ref={signatureRef}
               viewBox="0 0 300 100"
-              className="w-full h-24"
+              className="h-24 w-full"
             >
               <text
                 x="10"
@@ -404,7 +403,7 @@ export function AdvancedSignatureCreatorComponent({
                 max={maxSize}
                 value={size}
                 onChange={(e) => setSize(Number(e.target.value))}
-                className="absolute bottom-0 left-0 w-full py-20 bg-transparent hover:bg-transparent"
+                className="absolute bottom-0 left-0 w-full bg-transparent py-20 hover:bg-transparent"
               />
             )}
           </div>
@@ -415,19 +414,19 @@ export function AdvancedSignatureCreatorComponent({
           <button
             onClick={copySignature}
             className={`
-              px-4 py-2 rounded-full bg-black text-white flex items-center gap-2 
-              hover:bg-zinc-800 transition-colors
+              flex items-center gap-2 rounded-full bg-black px-4 py-2 text-white 
+              transition-colors hover:bg-zinc-800
               ${isCopied ? "bg-green-500 hover:bg-green-600" : ""}
             `}
           >
             {isCopied ? (
               <>
-                <CheckIcon className="w-4 h-4" />
+                <CheckIcon className="size-4" />
                 {copiedText}
               </>
             ) : (
               <>
-                <CopyIcon className="w-4 h-4" />
+                <CopyIcon className="size-4" />
                 {copyText}
               </>
             )}
