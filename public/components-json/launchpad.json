@@ -4,8 +4,10 @@
   "registryDependencies": [
     "input",
     "button",
-    "scroll-area",
-    "tabs"
+    "scrollarea",
+    "tabs",
+    "tabslist",
+    "tabstrigger"
   ],
   "dependencies": [
     "framer-motion",

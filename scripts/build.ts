@@ -238,17 +238,44 @@ function extractDependencies(content: string): { dependencies: string[], registr
   matches.forEach(match => {
     const importPath = match[1];
     if (importPath.startsWith('@/components/ui/') || importPath.startsWith('../ui/')) {
-      const component = importPath.split('/').pop() as string;
-      registryDependencies.push(component);
+      const components = extractComponentsFromImport(match[0]);
+      registryDependencies.push(...components);
     } else if (!importPath.startsWith('.') && !importPath.startsWith('@/')) {
       dependencies.push(importPath.split('/')[0]);
     }
   });
 
+  // Remove duplicates and filter out React-related imports
+  const filteredDependencies = Array.from(new Set(dependencies)).filter(
+    dep => !['react', 'react-dom'].includes(dep)
+  );
+
+  const filteredRegistryDependencies = Array.from(new Set(registryDependencies)).map(
+    comp => comp.toLowerCase()
+  );
+
   return {
-    dependencies: Array.from(new Set(dependencies)),
-    registryDependencies: Array.from(new Set(registryDependencies))
+    dependencies: filteredDependencies,
+    registryDependencies: filteredRegistryDependencies
   };
+}
+
+function extractComponentsFromImport(importStatement: string): string[] {
+  const components: string[] = [];
+  const namedImportRegex = /{([^}]+)}/;
+  const match = importStatement.match(namedImportRegex);
+  
+  if (match) {
+    components.push(...match[1].split(',').map(c => c.trim()));
+  } else {
+    const defaultImportRegex = /import\s+(\w+)/;
+    const defaultMatch = importStatement.match(defaultImportRegex);
+    if (defaultMatch) {
+      components.push(defaultMatch[1]);
+    }
+  }
+
+  return components;
 }
 
 function extractCssVars(content: string): Schema['cssVars'] {

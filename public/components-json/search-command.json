@@ -3,7 +3,13 @@
   "type": "registry:ui",
   "registryDependencies": [
     "button",
-    "command"
+    "command",
+    "commandempty",
+    "commandgroup",
+    "commandinput",
+    "commanditem",
+    "commandlist",
+    ""
   ],
   "dependencies": [
     "framer-motion",
