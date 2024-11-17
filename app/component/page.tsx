@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button"
 import EzBlog from '../(docs)/ez-blog/page'
 import IntroductionPage from '../(docs)/introduction/page'
 import CreateNewComponentt from '../(docs)/create-new-component/page'
-import LaunchpadComponent from '../(docs)/launchpad-component/page'
+// import LaunchpadComponent from '../(docs)/launchpad-component/page'
 import KeyButton from '@/components/easyui/key-button'
 import { KeyboardIcon, Pencil1Icon, QuestionMarkCircledIcon, QuestionMarkIcon, StarFilledIcon, StarIcon } from '@radix-ui/react-icons'
 import SparkleButton from '@/components/easyui/sparkle-button'
@@ -42,7 +42,7 @@ interface Item {
 const components: Item[] = [
   { name: 'introduction' },
   { name: 'create-new', isNew: true },
-  { name: 'launchpad', isNew: true},
+  // { name: 'launchpad', isNew: true},
   { name: 'key button', isNew: true},
   { name: 'sparkle button', isNew: true},
   { name: 'command search', isNew: true},
@@ -78,8 +78,8 @@ export default function TemplatePage() {
         return <IntroductionPage />
       case 'create-new':
         return <CreateNewComponentt />
-      case 'launchpad':
-        return <LaunchpadComponent />
+      // case 'launchpad':
+      //   return <LaunchpadComponent />
       case 'key button':
           return <KeyButtonComponent />
       case 'sparkle button':
@@ -105,7 +105,7 @@ export default function TemplatePage() {
   const getIcon = (name: string) => {
     switch (name) {
       case 'create-new': return <FileText className="mr-2 h-4 w-4" />
-      case 'launchpad': return <LucideGitBranchPlus className="mr-2 h-4 w-4" />
+      // case 'launchpad': return <LucideGitBranchPlus className="mr-2 h-4 w-4" />
       case 'key button': return <KeyboardIcon className="mr-2 h-4 w-4" />
       case 'sparkle button': return <StarIcon className="mr-2 h-4 w-4" />
       case 'command search': return <Command className="mr-2 h-4 w-4" />
