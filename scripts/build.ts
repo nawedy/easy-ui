@@ -185,6 +185,10 @@ interface Schema {
     content: string;
     type: "registry:ui";
   }>;
+  install?: {
+    before?: string[];
+    after?: string[];
+  };
 }
 
 type ComponentDefinition = Partial<
@@ -245,7 +249,6 @@ function extractDependencies(content: string): { dependencies: string[], registr
     }
   });
 
-  // Remove duplicates and filter out React-related imports
   const filteredDependencies = Array.from(new Set(dependencies)).filter(
     dep => !['react', 'react-dom'].includes(dep)
   );
@@ -337,6 +340,9 @@ async function main() {
           type: "registry:ui",
         },
       ],
+      install: {
+        before: component.registryDependencies?.map(dep => `npx shadcn@latest add ${dep}`) || [],
+      },
     };
 
     await fs.promises.writeFile(
