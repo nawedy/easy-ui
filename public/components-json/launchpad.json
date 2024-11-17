@@ -1,11 +1,20 @@
 {
   "name": "launchpad",
   "type": "registry:ui",
-  "registryDependencies": [],
+  "registryDependencies": [
+    "input",
+    "button",
+    "scroll",
+    "tabs"
+  ],
   "dependencies": [
     "react",
     "framer-motion",
-    "lucide-react"
+    "lucide-react",
+    "input",
+    "button",
+    "scroll-area",
+    "tabs"
   ],
   "devDependencies": [],
   "tailwind": {},

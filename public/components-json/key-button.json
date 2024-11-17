@@ -1,9 +1,12 @@
 {
   "name": "key-button",
   "type": "registry:ui",
-  "registryDependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
   "dependencies": [
-    "react"
+    "react",
+    "button"
   ],
   "devDependencies": [],
   "tailwind": {},

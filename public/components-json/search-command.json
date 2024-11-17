@@ -1,10 +1,14 @@
 {
   "name": "search-command",
   "type": "registry:ui",
-  "registryDependencies": [],
+  "registryDependencies": [
+    "button",
+    "command"
+  ],
   "dependencies": [
     "react",
-    "framer-motion"
+    "framer-motion",
+    "button"
   ],
   "devDependencies": [],
   "tailwind": {},

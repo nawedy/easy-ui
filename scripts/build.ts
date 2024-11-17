@@ -1,3 +1,165 @@
+// import fs from "fs";
+// import path from "path";
+// import { fileURLToPath } from 'url';
+
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+
+// interface Schema {
+//   name: string;
+//   type: "registry:ui";
+//   registryDependencies: string[];
+//   dependencies: string[];
+//   devDependencies: string[];
+//   tailwind: {
+//     config?: Record<string, unknown>;
+//   };
+//   cssVars: {
+//     light: Record<string, string>;
+//     dark: Record<string, string>;
+//   };
+//   files: Array<{
+//     path: string;
+//     content: string;
+//     type: "registry:ui";
+//   }>;
+// }
+
+// type ComponentDefinition = Partial<
+//   Pick<
+//     Schema,
+//     | "dependencies"
+//     | "devDependencies"
+//     | "registryDependencies"
+//     | "cssVars"
+//     | "tailwind"
+//   >
+// > & {
+//   name: string;
+//   path: string;
+// };
+
+// function readComponentFiles(directory: string): ComponentDefinition[] {
+//   const components: ComponentDefinition[] = [];
+//   const files = fs.readdirSync(directory);
+
+//   for (const file of files) {
+//     if (file.endsWith('.tsx')) {
+//       const name = path.basename(file, '.tsx');
+//       const componentPath = path.join(directory, file);
+//       const content = fs.readFileSync(componentPath, 'utf8');
+      
+//       const dependencies = extractDependencies(content);
+//       const registryDependencies = extractRegistryDependencies(content);
+//       const cssVars = extractCssVars(content);
+//       const tailwind = extractTailwindConfig(content);
+
+//       components.push({
+//         name,
+//         path: componentPath,
+//         dependencies,
+//         registryDependencies,
+//         cssVars,
+//         tailwind,
+//       });
+//     }
+//   }
+
+//   return components;
+// }
+
+// function extractDependencies(content: string): string[] {
+//   const importRegex = /import\s+(?:.+\s+from\s+)?['"](.+)['"]/g;
+//   const matches = Array.from(content.matchAll(importRegex));
+//   const dependencies = matches
+//     .map(match => match[1])
+//     .filter(dep => !dep.startsWith('.') && !dep.startsWith('@/'))
+//     .map(dep => dep.split('/')[0]);
+//   return Array.from(new Set(dependencies));
+// }
+
+// function extractRegistryDependencies(content: string): string[] {
+//   const registryDependencyRegex = /\/\/ @registryDependencies: (.*)/;
+//   const match = content.match(registryDependencyRegex);
+//   return match ? match[1].split(',').map(d => d.trim()) : [];
+// }
+
+// function extractCssVars(content: string): Schema['cssVars'] {
+//   const cssVarsRegex = /\/\/ @cssVars: (\{.*\})/;
+//   const match = content.match(cssVarsRegex);
+//   if (match) {
+//     try {
+//       return JSON.parse(match[1]);
+//     } catch (error) {
+//       console.warn(`Failed to parse CSS vars for component: ${error}`);
+//     }
+//   }
+//   return {
+//     light: {},
+//     dark: {},
+//   };
+// }
+
+// function extractTailwindConfig(content: string): Schema['tailwind'] {
+//   const tailwindConfigRegex = /\/\/ @tailwindConfig: (\{.*\})/;
+//   const match = content.match(tailwindConfigRegex);
+//   if (match) {
+//     try {
+//       return JSON.parse(match[1]);
+//     } catch (error) {
+//       console.warn(`Failed to parse Tailwind config for component: ${error}`);
+//     }
+//   }
+//   return {};
+// }
+
+// async function main() {
+//   const easyuiDirectory = path.join(process.cwd(), "components/easyui");
+//   const components = readComponentFiles(easyuiDirectory);
+
+//   const registry = path.join(process.cwd(), "public/components-json");
+//   if (!fs.existsSync(registry)) {
+//     fs.mkdirSync(registry, { recursive: true });
+//   }
+
+//   for (const component of components) {
+//     const content = await fs.promises.readFile(component.path, "utf8");
+
+//     const schema: Schema = {
+//       name: component.name,
+//       type: "registry:ui",
+//       registryDependencies: component.registryDependencies || [],
+//       dependencies: component.dependencies || [],
+//       devDependencies: component.devDependencies || [],
+//       tailwind: component.tailwind || {},
+//       cssVars: component.cssVars || {
+//         light: {},
+//         dark: {},
+//       },
+//       files: [
+//         {
+//           path: `${component.name}.tsx`,
+//           content,
+//           type: "registry:ui",
+//         },
+//       ],
+//     };
+
+//     await fs.promises.writeFile(
+//       path.join(registry, `${component.name}.json`),
+//       JSON.stringify(schema, null, 2)
+//     );
+
+//     console.log(`Generated registry file for ${component.name}`);
+//   }
+
+//   console.log("Registry build complete.");
+// }
+
+// main().catch(console.error);
+
+
+
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from 'url';
@@ -73,15 +235,30 @@ function extractDependencies(content: string): string[] {
   const matches = Array.from(content.matchAll(importRegex));
   const dependencies = matches
     .map(match => match[1])
-    .filter(dep => !dep.startsWith('.') && !dep.startsWith('@/'))
-    .map(dep => dep.split('/')[0]);
+    .filter(dep => {
+      // Include external dependencies and shadcn/ui components
+      return !dep.startsWith('.') || dep.startsWith('@/components/ui/');
+    })
+    .map(dep => {
+      if (dep.startsWith('@/components/ui/')) {
+        // For shadcn/ui components, we'll add them as registry dependencies
+        return dep.split('/').pop() as string;
+      }
+      return dep.split('/')[0];
+    });
   return Array.from(new Set(dependencies));
 }
 
 function extractRegistryDependencies(content: string): string[] {
   const registryDependencyRegex = /\/\/ @registryDependencies: (.*)/;
   const match = content.match(registryDependencyRegex);
-  return match ? match[1].split(',').map(d => d.trim()) : [];
+  const explicitDependencies = match ? match[1].split(',').map(d => d.trim()) : [];
+  
+  // Extract shadcn/ui components as registry dependencies
+  const shadcnImports = content.match(/@\/components\/ui\/(\w+)/g) || [];
+  const shadcnDependencies = shadcnImports.map(imp => imp.split('/').pop() as string);
+  
+  return Array.from(new Set([...explicitDependencies, ...shadcnDependencies]));
 }
 
 function extractCssVars(content: string): Schema['cssVars'] {
