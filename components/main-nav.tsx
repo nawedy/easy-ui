@@ -21,7 +21,7 @@ export function MainNav() {
         <span className="font-bold sm:inline-block">
           {siteConfig.name}
         </span>
-        <Badge className="hidden sm:inline-block" variant="secondary">Beta</Badge>
+        <Badge className="hidden sm:inline-block bg-black dark:bg-white text-white dark:text-black rounded-full" variant="secondary">Beta</Badge>
       </Link>
       <nav className="hidden lg:flex lg:items-center lg:gap-6 text-sm">
         <Link
