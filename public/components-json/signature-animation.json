@@ -3,7 +3,7 @@
   "type": "registry:ui",
   "registryDependencies": [],
   "dependencies": [
-    "react"
+    "lucide-react"
   ],
   "devDependencies": [],
   "tailwind": {},

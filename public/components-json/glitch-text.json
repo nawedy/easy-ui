@@ -2,9 +2,7 @@
   "name": "glitch-text",
   "type": "registry:ui",
   "registryDependencies": [],
-  "dependencies": [
-    "react"
-  ],
+  "dependencies": [],
   "devDependencies": [],
   "tailwind": {},
   "cssVars": {

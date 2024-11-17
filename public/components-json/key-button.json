@@ -4,10 +4,7 @@
   "registryDependencies": [
     "button"
   ],
-  "dependencies": [
-    "react",
-    "button"
-  ],
+  "dependencies": [],
   "devDependencies": [],
   "tailwind": {},
   "cssVars": {

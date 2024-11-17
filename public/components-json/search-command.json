@@ -6,9 +6,8 @@
     "command"
   ],
   "dependencies": [
-    "react",
     "framer-motion",
-    "button"
+    "lucide-react"
   ],
   "devDependencies": [],
   "tailwind": {},

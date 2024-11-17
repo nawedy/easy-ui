@@ -3,8 +3,6 @@
   "type": "registry:ui",
   "registryDependencies": [],
   "dependencies": [
-    "react",
-    "canvas-confetti",
     "framer-motion"
   ],
   "devDependencies": [],

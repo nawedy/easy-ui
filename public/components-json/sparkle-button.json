@@ -1,10 +1,10 @@
 {
   "name": "sparkle-button",
   "type": "registry:ui",
-  "registryDependencies": [],
-  "dependencies": [
-    "react"
+  "registryDependencies": [
+    "button"
   ],
+  "dependencies": [],
   "devDependencies": [],
   "tailwind": {},
   "cssVars": {

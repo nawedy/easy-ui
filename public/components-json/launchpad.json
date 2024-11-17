@@ -4,17 +4,12 @@
   "registryDependencies": [
     "input",
     "button",
-    "scroll",
+    "scroll-area",
     "tabs"
   ],
   "dependencies": [
-    "react",
     "framer-motion",
-    "lucide-react",
-    "input",
-    "button",
-    "scroll-area",
-    "tabs"
+    "lucide-react"
   ],
   "devDependencies": [],
   "tailwind": {},

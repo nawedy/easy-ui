@@ -211,8 +211,7 @@ function readComponentFiles(directory: string): ComponentDefinition[] {
       const componentPath = path.join(directory, file);
       const content = fs.readFileSync(componentPath, 'utf8');
       
-      const dependencies = extractDependencies(content);
-      const registryDependencies = extractRegistryDependencies(content);
+      const { dependencies, registryDependencies } = extractDependencies(content);
       const cssVars = extractCssVars(content);
       const tailwind = extractTailwindConfig(content);
 
@@ -230,35 +229,26 @@ function readComponentFiles(directory: string): ComponentDefinition[] {
   return components;
 }
 
-function extractDependencies(content: string): string[] {
-  const importRegex = /import\s+(?:.+\s+from\s+)?['"](.+)['"]/g;
+function extractDependencies(content: string): { dependencies: string[], registryDependencies: string[] } {
+  const importRegex = /import\s+(?:{[^}]+}\s+from\s+)?['"](.+)['"]/g;
   const matches = Array.from(content.matchAll(importRegex));
-  const dependencies = matches
-    .map(match => match[1])
-    .filter(dep => {
-      // Include external dependencies and shadcn/ui components
-      return !dep.startsWith('.') || dep.startsWith('@/components/ui/');
-    })
-    .map(dep => {
-      if (dep.startsWith('@/components/ui/')) {
-        // For shadcn/ui components, we'll add them as registry dependencies
-        return dep.split('/').pop() as string;
-      }
-      return dep.split('/')[0];
-    });
-  return Array.from(new Set(dependencies));
-}
+  const dependencies: string[] = [];
+  const registryDependencies: string[] = [];
 
-function extractRegistryDependencies(content: string): string[] {
-  const registryDependencyRegex = /\/\/ @registryDependencies: (.*)/;
-  const match = content.match(registryDependencyRegex);
-  const explicitDependencies = match ? match[1].split(',').map(d => d.trim()) : [];
-  
-  // Extract shadcn/ui components as registry dependencies
-  const shadcnImports = content.match(/@\/components\/ui\/(\w+)/g) || [];
-  const shadcnDependencies = shadcnImports.map(imp => imp.split('/').pop() as string);
-  
-  return Array.from(new Set([...explicitDependencies, ...shadcnDependencies]));
+  matches.forEach(match => {
+    const importPath = match[1];
+    if (importPath.startsWith('@/components/ui/') || importPath.startsWith('../ui/')) {
+      const component = importPath.split('/').pop() as string;
+      registryDependencies.push(component);
+    } else if (!importPath.startsWith('.') && !importPath.startsWith('@/')) {
+      dependencies.push(importPath.split('/')[0]);
+    }
+  });
+
+  return {
+    dependencies: Array.from(new Set(dependencies)),
+    registryDependencies: Array.from(new Set(registryDependencies))
+  };
 }
 
 function extractCssVars(content: string): Schema['cssVars'] {
@@ -307,7 +297,7 @@ async function main() {
       type: "registry:ui",
       registryDependencies: component.registryDependencies || [],
       dependencies: component.dependencies || [],
-      devDependencies: component.devDependencies || [],
+      devDependencies: [],
       tailwind: component.tailwind || {},
       cssVars: component.cssVars || {
         light: {},
