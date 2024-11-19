@@ -199,7 +199,7 @@ export function SiteHeader() {
                   variant: "default",
                   size: "sm",
                 }),
-                "gap-2 whitespace-pre md:flex rounded-2xl",
+                "gap-2 whitespace-pre md:flex rounded-[1rem]",
                 "group relative text-sm font-semibold ring-offset-inherit transition-all duration-150 ease-in-out hover:ring-2 hover:ring-black hover:ring-offset-2 hover:ring-offset-current dark:hover:ring-neutral-50"
               )}
             >

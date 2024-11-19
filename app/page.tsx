@@ -21,6 +21,7 @@ import PricingPage from "./pricing/page"
 import MarqueeDemo from "./testimonials/page"
 import Showcase from "@/components/showcase"
 import EasyHero from "@/components/easy-hero"
+import ShowcaseGrid from "@/components/showcase"
 
 // Corrected the path for FAQPage import
 
@@ -74,7 +75,7 @@ export default function IndexPage() {
                   size: "lg",
                 }),
                 "gap-2 whitespace-pre md:flex",
-                "group relative w-full gap-1 rounded-full text-sm font-semibold tracking-tighter ring-offset-inherit transition-all duration-150 ease-in-out hover:ring-2 hover:ring-black hover:ring-offset-2 hover:ring-offset-current dark:hover:ring-neutral-50"
+                "group relative w-full gap-1 rounded-[1rem] text-sm font-semibold tracking-tighter ring-offset-inherit transition-all duration-150 ease-in-out hover:ring-2 hover:ring-black hover:ring-offset-2 hover:ring-offset-current dark:hover:ring-neutral-50"
               )}
             >
               Browse Templates
@@ -88,7 +89,7 @@ export default function IndexPage() {
                   variant: "outline",
                 }),
                 "gap-2 whitespace-pre md:flex",
-                "group relative w-full overflow-hidden rounded-full text-sm font-semibold tracking-tighter transition-all duration-150 ease-in-out hover:ring-2 hover:ring-neutral-300 hover:ring-offset-2 hover:ring-offset-inherit dark:hover:ring-black dark:hover:ring-offset-black"
+                "group relative w-full overflow-hidden rounded-[1rem] text-sm font-semibold tracking-tighter transition-all duration-150 ease-in-out hover:ring-2 hover:ring-neutral-300 hover:ring-offset-2 hover:ring-offset-inherit dark:hover:ring-black dark:hover:ring-offset-black"
               )}
             >
               Get Easy UI Premium
@@ -134,12 +135,12 @@ export default function IndexPage() {
               </a>
             </div>
           </motion.div>
-        <Showcase />
+        <ShowcaseGrid />
         
         <MarqueeDemo />
       </div>
 
-      <div className="lg:pt-25 mx-auto flex max-w-[58rem] flex-col items-center space-y-4 pt-12 text-center sm:pt-8">
+      <div className="lg:pt-20 mx-auto flex max-w-[58rem] flex-col items-center space-y-4 pt-12 text-center sm:pt-8">
         <h2 className="font-heading text-3xl font-bold leading-[1.1] sm:text-3xl md:text-3xl">
           Frequently asked questions
         </h2>

@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react";
 
 export function Announcement() {
   return (
-    <a className="z-10 flex min-h-[4rem] items-center justify-center mx-auto" href="/templates">
+    <a className="z-10 flex min-h-[4rem] items-center justify-center mx-auto mt-10 lg:mt-0" href="/templates">
       <AnimatedGradientText>
         🎉 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
         <a
@@ -15,7 +15,7 @@ export function Announcement() {
           )}
           href="/templates"
         >
-          Introducing Easy-UI
+          Introducing Easy UI
         </a>
         <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
       </AnimatedGradientText>

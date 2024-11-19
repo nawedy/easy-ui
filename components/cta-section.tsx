@@ -5,7 +5,7 @@ import { ChevronRight, HeartHandshake } from "lucide-react";
 export default function CTASection() {
   return (
     <section id="cta">
-      <div className="py-10">
+      <div className="py-10 lg:py-20 mt-0 lg:mt-10">
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden p-14">
           <div className="z-10 mx-auto size-24 rounded-[2rem] border bg-white/10 p-3 shadow-2xl backdrop-blur-md dark:bg-black/10 lg:size-32">
             <HeartHandshake className="mx-auto size-16 text-black dark:text-white lg:size-24" />
