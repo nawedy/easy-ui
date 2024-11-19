@@ -92,7 +92,7 @@ const EasyHero: React.FC<EasyHeroProps> = ({ title, subtext, heroimage }) => {
             </div>
           </header>
           <div className="flex flex-row gap-0">
-            <p className="mb-4 leading-7 mt-7 tracking-normal sm:max-w-xl md:max-w-[27.5rem] lg:max-w-[35.5rem] dark:text-muted-foreground text-gray-700 max-w-4xl text-gray-400 text-lg lg:text-xl">
+            <p className="mb-4 leading-7 mt-7 tracking-normal sm:max-w-xl md:max-w-[27.5rem] lg:max-w-[35.5rem] dark:text-muted-foreground max-w-4xl text-gray-600 text-lg lg:text-xl">
               Kickstart with{" "}
               <span className="font-semibold">beautifully designed </span>
               website templates built with{" "}
