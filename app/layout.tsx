@@ -168,7 +168,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 transition={{ duration: 2.5, ease: "easeInOut" }}
                 className="fixed inset-0 flex items-center justify-center bg-background z-50"
               >
-                <div className="relative w-64 h-64">
+                <div className="relative w-20 h-20 lg:w-64 lg:h-64">
                   <Image
                     src="https://pub-0cd6f9d4131f4f79ac40219248ae64db.r2.dev/logo.svg"
                     alt="Logo"
