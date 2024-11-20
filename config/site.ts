@@ -25,6 +25,6 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/kathanmehtaa",
     github: "https://github.com/DarkInventor/easy-ui",
-    docs: "https://ui.shadcn.com",
+    docs: "https://www.easyui.pro/introduction",
   },
 }
