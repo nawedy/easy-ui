@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react'
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, LucideGitBranchPlus, KeyIcon, Command, TextCursorIcon, EggFriedIcon, FileSignature } from 'lucide-react'
+import { Menu, FileText, MessageSquare, LayoutDashboard, Palette, Book, Grid, Rocket, ShoppingCart, Mail, Box, Briefcase, Zap, Camera, BookOpen, List, Clock, Quote, ChevronRight, StickyNoteIcon, PaintBucketIcon, PuzzleIcon, LucideGitBranchPlus, KeyIcon, Command, TextCursorIcon, EggFriedIcon, FileSignature, HexagonIcon } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -32,6 +32,7 @@ import SignatureAnimationComponent from '../(docs)/signature-animation-component
 import FeatureCard from '@/components/easyui/feature-card'
 import Features from '../features/page'
 import FeatureCardComponent from '../(docs)/feature-card-component/page'
+import HexagonHeroComponent from '../(docs)/hexagon-hero-component/page'
 
 interface Item {
   name: string;
@@ -51,6 +52,7 @@ const components: Item[] = [
   { name: 'firefly button', isNew: true},
   { name: 'sign animation', isNew: true},
   { name: 'feature card', isNew: true},
+  { name: 'hexagon hero', isNew: true},
 ]
 
 export default function TemplatePage() {
@@ -96,6 +98,8 @@ export default function TemplatePage() {
             return <SignatureAnimationComponent />
       case 'feature card':
             return <FeatureCardComponent />
+      case 'hexagon hero':
+            return <HexagonHeroComponent />
 
       default:
         return <div>Component not found</div>
@@ -114,6 +118,7 @@ export default function TemplatePage() {
       case 'firefly button': return <EggFriedIcon className="mr-2 h-4 w-4" />
       case 'sign animation': return <Pencil1Icon className="mr-2 h-4 w-4" />
       case 'feature card': return <FileSignature className="mr-2 h-4 w-4" />
+      case 'hexagon hero': return <HexagonIcon className="mr-2 size-4" />
       default: return <ChevronRight className="mr-2 h-4 w-4" />
     }
   }

@@ -7,9 +7,10 @@ import { Button } from "@/components/ui/button"
 import { CardDescription, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import FeatureCard from "@/components/easyui/feature-card"
+import HexagonHero from "@/components/easyui/hexagon-hero"
 
-export default function FeatureCardComponent() {
+
+export default function HexagonHeroComponent() {
   const [key, setKey] = useState(0)
   const [copied1, setCopied1] = useState(false)
   const [copied2, setCopied2] = useState(false)
@@ -41,55 +42,70 @@ export default function FeatureCardComponent() {
     }
   }
 
-  const codeString = `export default function FeatureCard() {
-    return (
-      <div className="mx-auto flex h-[399px] w-full max-w-[343px] flex-col overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-black shadow-md sm:h-[310px] sm:max-w-[510px]">
-        <div className="flex grow flex-col p-4 sm:p-6">
-          <div className="mb-4 grid grow grid-cols-1 gap-4 sm:mb-4 sm:grid-cols-3 sm:gap-6">
-            {/* Card 1 */}
-            <div className="group relative cursor-pointer overflow-hidden rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-black transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-transparent sm:-rotate-2">
-              <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-70"></div>
-              <div className="relative z-10 flex h-full flex-col justify-between rounded-2xl bg-white  dark:bg-black p-3 transition-colors duration-300 group-hover:bg-opacity-90 sm:p-4">
-                <div className="size-10 rounded-full bg-gradient-to-r from-green-300 to-yellow-300 sm:size-14" />
-                <div className="space-y-1.5 sm:space-y-2">
-                  <div className="h-1.5 w-20 rounded-full bg-gray-300 sm:h-2 sm:w-24" />
-                  <div className="h-1.5 w-24 rounded-full bg-gray-100 sm:h-2 sm:w-28" />
-                </div>
-              </div>
-            </div>
-  
-            {/* Card 2 */}
-            <div className="group relative cursor-pointer overflow-hidden rounded-2xl border border-gray-100 bg-white dark:bg-black dark:border-gray-700 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-transparent">
-              <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-blue-400 via-teal-500 to-green-500 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-70"></div>
-              <div className="relative z-10 flex h-full flex-col justify-between rounded-2xl bg-white dark:bg-black p-3 transition-colors duration-300 group-hover:bg-opacity-90 sm:p-4">
-                <div className="size-10 rounded-full bg-gradient-to-r from-green-300 to-orange-300 sm:size-14" />
-                <div className="space-y-1.5 sm:space-y-2">
-                  <div className="h-1.5 w-20 rounded-full bg-gray-300 sm:h-2 sm:w-24" />
-                  <div className="h-1.5 w-24 rounded-full bg-gray-100 sm:h-2 sm:w-28" />
-                </div>
-              </div>
-            </div>
-  
-            {/* Card 3 */}
-            <div className="group relative cursor-pointer overflow-hidden rounded-2xl border border-gray-100 bg-white dark:bg-black dark:border-gray-700 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-transparent sm:rotate-2">
-              <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-70"></div>
-              <div className="relative z-10 flex h-full flex-col justify-between rounded-2xl bg-white dark:bg-black p-3 transition-colors duration-300 group-hover:bg-opacity-90 sm:p-4">
-                <div className="size-10 rounded-full bg-gradient-to-r from-pink-300 to-yellow-300 sm:size-14" />
-                <div className="space-y-1.5 sm:space-y-2">
-                  <div className="h-1.5 w-20 rounded-full bg-gray-300 sm:h-2 sm:w-24" />
-                  <div className="h-1.5 w-24 rounded-full bg-gray-100 sm:h-2 sm:w-28" />
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <div className="border-t border-gray-200 dark:border-gray-700">
-            <h2 className=" text-lg font-bold sm:mt-2 sm:text-xl ">Social</h2>
-            <p className="text-xs text-gray-500 sm:text-sm">Write once, share with your friends</p>
-          </div>
-        </div>
+  const codeString = `
+  "use client"
+
+import { useEffect, useRef, useState } from 'react'
+import { Youtube } from 'lucide-react'
+
+export default function HexagonHero() {
+  const patternRef = useRef<HTMLDivElement>(null)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const patternElement = patternRef.current
+    if (!patternElement) return
+
+    const countY = Math.ceil(patternElement.clientHeight / 40) + 1
+    const countX = Math.ceil(patternElement.clientWidth / 48) + 1
+
+    for (let i = 0; i < countY; i++) {
+      for (let j = 0; j < countX; j++) {
+        const hexagon = document.createElement("div")
+        hexagon.className = "absolute w-11 h-[50px] bg-no-repeat bg-contain"
+        hexagon.style.backgroundImage = "url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODciIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgODcgMTAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMi4xOTg3MyAyNi4xNTQ3TDQzLjUgMi4zMDk0TDg0LjgwMTMgMjYuMTU0N1Y3My44NDUzTDQzLjUgOTcuNjkwNkwyLjE5ODczIDczLjg0NTNWMjYuMTU0N1oiIGZpbGw9IiMxMzEyMTciIHN0cm9rZT0iIzEzMTIxNyIgc3Ryb2tlLXdpZHRoPSI0Ii8+Cjwvc3ZnPgo=')"
+        hexagon.style.top = \`\${i * 40}px\`
+        hexagon.style.left = \`\${j * 48 + ((i * 24) % 48)}px\`
+        patternElement.appendChild(hexagon)
+      }
+    }
+
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+
+    document.addEventListener("mousemove", handleMouseMove)
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove)
+    }
+  }, [])
+
+  return (
+    <div className="bg-[#131217] w-full h-screen relative grid place-content-center font-['Montserrat'] overflow-hidden">
+      <h1 className="text-8xl font-bold text-white relative z-10 text-center">Hexagons</h1>
+      <div 
+        id="gradient" 
+        className="w-[400px] h-[400px] absolute top-[-200px] left-[-200px]"
+        style={{
+          background: 'radial-gradient(#ff8811, transparent 50%)',
+          transform: \`translate(\${mousePosition.x}px, \${mousePosition.y}px)\`
+        }}
+      />
+      <div id="pattern" ref={patternRef} className="absolute top-[-44px] left-[-50px] right-0 bottom-0" />
+      <div className="links fixed bottom-0 left-0 p-2 font-['Montserrat'] text-lg font-normal flex flex-col gap-2 border-t border-r border-white/30 rounded-tr-lg">
+        <a 
+          href="https://youtu.be/4cI3NSPHRoY" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-white no-underline flex justify-between items-center opacity-50 hover:opacity-100 transition-opacity"
+        >
+          Watch on
+          <Youtube className="ml-2 flex-shrink-0 stroke-[#dd2d4a]" />
+        </a>
       </div>
-    )
+    </div>
+  )
 }
 `
 
@@ -97,10 +113,10 @@ export default function FeatureCardComponent() {
     <div className="flex flex-wrap justify-start gap-4 pb-10 max-w-full min-w-full px-0 lg:px-20">
       <div className="w-full sm:w-1/2 p-2 mt-3 space-y-4 lg:mt-5 md:lg-5">
         <CardTitle className="text-3xl tracking-tight leading-7">
-          Feature Card
+          Hexagon Hero
         </CardTitle>
         <CardDescription className="text-balance text-lg text-muted-foreground">
-            A sleek, responsive feature card showcasing interactive features with hover effects and gradient accents.
+            A sleek, responsive hero section with Hexagon Hover effects in the background.
         </CardDescription>
       </div>
 
@@ -130,9 +146,9 @@ export default function FeatureCardComponent() {
             >
               <RotateCcw size={16} />
             </Button>
-            <div className="p-5">
-              <FeatureCard />
-            </div>
+            {/* <div className="p-5"> */}
+             <HexagonHero />
+            {/* </div> */}
           </div>
         </TabsContent>
         <TabsContent value="code">        
@@ -156,17 +172,18 @@ export default function FeatureCardComponent() {
 
               <pre className="ml-2 py-2 pb-2 pl-2 font-sm">
                 <code id="codeBlock2" className="text-left language-js text-sm">
-                  {`import FeatureCard from '@/components/easyui/feature-card';
+                  {`import HexagonHero from '@/components/easyui/hexagon-hero';
 import React from 'react'
 
 function Home() {
 
   return (
-    <FeatureCard />
+    <HexagonHero />
   )
 }
 
 export default Home
+
 `}
                 </code>
               </pre>
@@ -212,7 +229,7 @@ export default Home
       </button>
       <pre className="font-sm ml-2 max-w-full overflow-x-auto rounded-2xl py-4 pl-2">
         <code id="codeBlock3" className="language-js block w-full text-left text-sm"> 
-          {`npx shadcn@latest add "https://easyui.pro/components-json/feature-card.json"`}
+          {`npx shadcn@latest add "https://easyui.pro/components-json/hexagon-hero.json"`}
         </code>
       </pre>
     </div>
@@ -220,7 +237,7 @@ export default Home
 </TabsContent>
 <TabsContent value="manual">
   <div className="pl-4">
-    <p className="mt-0 font-semibold leading-7 tracking-tight mb-5">Copy and paste the following code into your <span className="italic font-normal">Components/easyui/feature-card.tsx</span></p>
+    <p className="mt-0 font-semibold leading-7 tracking-tight mb-5">Copy and paste the following code into your <span className="italic font-normal">Components/easyui/hexagon-hero.tsx</span></p>
       <div className="font-sm relative w-full rounded-md border border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800 [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
         <button onClick={() => { 
                 const codeElement = document.getElementById('codeBlock');
@@ -237,58 +254,7 @@ export default Home
               <CopyIcon className="h-4 text-black hover:text-gray-400 active:text-blue-700 dark:text-white" style={{ backdropFilter: 'blur(20px)' }} />
         </button>
         <pre className="font-sm ml-2 min-h-[600px] py-2 pl-2 sm:min-h-[300px] lg:min-h-[600px]"><code id="codeBlock"  className="language-js text-left text-sm ">              
-{`
-export default function FeatureCard() {
-    return (
-      <div className="mx-auto flex h-[399px] w-full max-w-[343px] flex-col overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-black shadow-md sm:h-[310px] sm:max-w-[510px]">
-        <div className="flex grow flex-col p-4 sm:p-6">
-          <div className="mb-4 grid grow grid-cols-1 gap-4 sm:mb-4 sm:grid-cols-3 sm:gap-6">
-            {/* Card 1 */}
-            <div className="group relative cursor-pointer overflow-hidden rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-black transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-transparent sm:-rotate-2">
-              <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-70"></div>
-              <div className="relative z-10 flex h-full flex-col justify-between rounded-2xl bg-white  dark:bg-black p-3 transition-colors duration-300 group-hover:bg-opacity-90 sm:p-4">
-                <div className="size-10 rounded-full bg-gradient-to-r from-green-300 to-yellow-300 sm:size-14" />
-                <div className="space-y-1.5 sm:space-y-2">
-                  <div className="h-1.5 w-20 rounded-full bg-gray-300 sm:h-2 sm:w-24" />
-                  <div className="h-1.5 w-24 rounded-full bg-gray-100 sm:h-2 sm:w-28" />
-                </div>
-              </div>
-            </div>
-  
-            {/* Card 2 */}
-            <div className="group relative cursor-pointer overflow-hidden rounded-2xl border border-gray-100 bg-white dark:bg-black dark:border-gray-700 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-transparent">
-              <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-blue-400 via-teal-500 to-green-500 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-70"></div>
-              <div className="relative z-10 flex h-full flex-col justify-between rounded-2xl bg-white dark:bg-black p-3 transition-colors duration-300 group-hover:bg-opacity-90 sm:p-4">
-                <div className="size-10 rounded-full bg-gradient-to-r from-green-300 to-orange-300 sm:size-14" />
-                <div className="space-y-1.5 sm:space-y-2">
-                  <div className="h-1.5 w-20 rounded-full bg-gray-300 sm:h-2 sm:w-24" />
-                  <div className="h-1.5 w-24 rounded-full bg-gray-100 sm:h-2 sm:w-28" />
-                </div>
-              </div>
-            </div>
-  
-            {/* Card 3 */}
-            <div className="group relative cursor-pointer overflow-hidden rounded-2xl border border-gray-100 bg-white dark:bg-black dark:border-gray-700 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-transparent sm:rotate-2">
-              <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-70"></div>
-              <div className="relative z-10 flex h-full flex-col justify-between rounded-2xl bg-white dark:bg-black p-3 transition-colors duration-300 group-hover:bg-opacity-90 sm:p-4">
-                <div className="size-10 rounded-full bg-gradient-to-r from-pink-300 to-yellow-300 sm:size-14" />
-                <div className="space-y-1.5 sm:space-y-2">
-                  <div className="h-1.5 w-20 rounded-full bg-gray-300 sm:h-2 sm:w-24" />
-                  <div className="h-1.5 w-24 rounded-full bg-gray-100 sm:h-2 sm:w-28" />
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <div className="border-t border-gray-200 dark:border-gray-700">
-            <h2 className=" text-lg font-bold sm:mt-2 sm:text-xl ">Social</h2>
-            <p className="text-xs text-gray-500 sm:text-sm">Write once, share with your friends</p>
-          </div>
-        </div>
-      </div>
-    )
-}
-`}
+{codeString}
             </code></pre>
 
             </div>
